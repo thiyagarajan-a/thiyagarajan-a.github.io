@@ -1,6 +1,6 @@
 # thiyagarajan-a.github.io
 
-Portfolio website for Thiyagarajan Anandan (Anand Ant).
+Portfolio website for Theo ( Thiyagarajan Anandan ).
 
 ## Structure
 
