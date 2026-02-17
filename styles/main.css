@@ -1,18 +1,37 @@
 :root {
-  --bg: #f6f3ec;
-  --surface: #fffcf6;
-  --surface-strong: #f0ece2;
-  --ink: #111111;
-  --muted: #5f5a51;
-  --accent: #d85a2b;
-  --accent-soft: #f4d5c8;
-  --line: #d8d1c3;
-  --ok: #225f3b;
-  --radius-sm: 10px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-  --shadow: 0 8px 24px rgba(15, 15, 15, 0.08);
-  --container: 1120px;
+  --bg: #05060a;
+  --bg-2: radial-gradient(circle at 12% 18%, rgba(120, 255, 214, 0.08), transparent 32%),
+    radial-gradient(circle at 82% 12%, rgba(102, 228, 255, 0.12), transparent 28%),
+    radial-gradient(circle at 72% 78%, rgba(98, 91, 255, 0.14), transparent 32%),
+    #05060a;
+  --surface: rgba(14, 16, 24, 0.9);
+  --surface-strong: rgba(18, 22, 33, 0.96);
+  --ink: #e8ecf5;
+  --muted: #a9b4cc;
+  --accent: #66e4ff;
+  --accent-2: #b49cff;
+  --accent-soft: rgba(102, 228, 255, 0.18);
+  --line: rgba(255, 255, 255, 0.08);
+  --ok: #58d69a;
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 26px;
+  --shadow: 0 10px 40px rgba(0, 0, 0, 0.28);
+  --container: 1180px;
+  --grid: repeating-linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.04) 0,
+      rgba(255, 255, 255, 0.04) 1px,
+      transparent 1px,
+      transparent 72px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.04) 0,
+      rgba(255, 255, 255, 0.04) 1px,
+      transparent 1px,
+      transparent 72px
+    );
 }
 
 * {
@@ -27,17 +46,7 @@ body {
   margin: 0;
   font-family: "IBM Plex Sans", "Trebuchet MS", sans-serif;
   color: var(--ink);
-  background:
-    radial-gradient(circle at 12% 8%, rgba(216, 90, 43, 0.12), transparent 35%),
-    radial-gradient(circle at 88% 2%, rgba(95, 90, 81, 0.08), transparent 25%),
-    repeating-linear-gradient(
-      to right,
-      rgba(18, 18, 18, 0.03) 0,
-      rgba(18, 18, 18, 0.03) 1px,
-      transparent 1px,
-      transparent 64px
-    ),
-    var(--bg);
+  background: var(--bg-2), var(--grid);
   line-height: 1.6;
   min-height: 100vh;
 }
@@ -81,8 +90,8 @@ img {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(246, 243, 236, 0.88);
-  backdrop-filter: blur(10px);
+  background: rgba(5, 6, 10, 0.72);
+  backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line);
 }
 
@@ -104,20 +113,21 @@ img {
 .brand-mark {
   display: inline-grid;
   place-items: center;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: var(--ink);
-  color: #fff;
+  background: radial-gradient(circle at 30% 30%, #ffffff, #66e4ff 40%, #0d111c 70%);
+  color: #05060a;
   font-family: "Sora", sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   letter-spacing: 0.08em;
+  box-shadow: 0 0 0 1px rgba(102, 228, 255, 0.4), 0 12px 30px rgba(0, 0, 0, 0.35);
 }
 
 .brand-text {
   font-family: "Sora", sans-serif;
-  font-size: 0.95rem;
-  letter-spacing: 0.02em;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
   font-weight: 700;
 }
 
@@ -171,11 +181,11 @@ main {
 }
 
 .section {
-  padding: 3.8rem 0;
+  padding: 4rem 0;
 }
 
 .section-tight {
-  padding: 2.6rem 0;
+  padding: 3rem 0;
 }
 
 .section-title {
@@ -189,19 +199,22 @@ main {
   margin: 0 0 0.65rem;
   color: var(--accent);
   font-family: "IBM Plex Mono", monospace;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 .lead {
-  font-size: clamp(1.04rem, 0.94rem + 0.3vw, 1.2rem);
-  color: #242424;
+  font-size: clamp(1.08rem, 0.98rem + 0.35vw, 1.28rem);
+  color: #dfe6f5;
   max-width: 72ch;
 }
 
 .hero {
-  padding: 4.8rem 0 3rem;
+  padding: 5.2rem 0 3.6rem;
 }
 
 .hero-layout {
@@ -222,20 +235,23 @@ main {
 .hero h1 span {
   color: var(--accent);
   display: inline-block;
+  text-shadow: 0 0 24px rgba(102, 228, 255, 0.38);
 }
 
 .hero-copy {
-  color: #2d2d2d;
+  color: #cfd8ec;
   max-width: 68ch;
   font-size: clamp(1rem, 0.94rem + 0.35vw, 1.22rem);
 }
 
 .hero-card {
   border: 1px solid var(--line);
-  background: linear-gradient(180deg, var(--surface), #f6f2e8);
+  background: linear-gradient(150deg, rgba(16, 18, 28, 0.92), rgba(22, 26, 40, 0.92));
   border-radius: var(--radius-lg);
-  padding: 1.3rem;
+  padding: 1.4rem;
   box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-photo {
@@ -249,6 +265,7 @@ main {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.11);
   filter: grayscale(100%);
   background: #c5c5c5;
+  mix-blend-mode: screen;
 }
 
 .hero-card h2 {
@@ -264,7 +281,7 @@ main {
 
 .hero-card li {
   margin-bottom: 0.5rem;
-  color: #343434;
+  color: #d4ddf1;
   font-size: 0.95rem;
 }
 
@@ -295,19 +312,20 @@ main {
 }
 
 .button.primary {
-  background: var(--ink);
-  color: #fff;
+  background: linear-gradient(120deg, #66e4ff, #b49cff);
+  color: #05060a;
+  box-shadow: 0 10px 30px rgba(102, 228, 255, 0.32);
 }
 
 .button.secondary {
-  background: var(--surface);
-  border-color: var(--line);
+  background: transparent;
+  border-color: rgba(102, 228, 255, 0.4);
   color: var(--ink);
 }
 
 .button.ghost {
-  background: transparent;
-  border-color: var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
   color: var(--muted);
 }
 
@@ -321,7 +339,8 @@ main {
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
   padding: 1rem;
-  background: var(--surface);
+  background: linear-gradient(160deg, rgba(18, 22, 33, 0.96), rgba(18, 25, 36, 0.86));
+  box-shadow: var(--shadow);
 }
 
 .kpi-value {
@@ -338,28 +357,30 @@ main {
 }
 
 .proof-strip {
-  border: 1px dashed var(--line);
+  border: 1px dashed rgba(102, 228, 255, 0.45);
   border-radius: var(--radius-md);
-  padding: 0.9rem;
+  padding: 1rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.65rem;
-  background: #faf8f1;
+  background: rgba(8, 12, 18, 0.8);
 }
 
 .proof-link {
   text-decoration: none;
-  border: 1px solid var(--line);
-  padding: 0.45rem 0.65rem;
+  border: 1px solid rgba(102, 228, 255, 0.35);
+  padding: 0.45rem 0.75rem;
   border-radius: 999px;
   font-size: 0.85rem;
-  color: #37332e;
-  background: #fff;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
 }
 
 .proof-link:hover,
 .proof-link:focus-visible {
   border-color: var(--accent);
+  box-shadow: 0 0 18px rgba(102, 228, 255, 0.35);
 }
 
 .card-grid {
@@ -371,12 +392,14 @@ main {
 .card {
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  background: var(--surface);
-  padding: 1rem;
+  background: linear-gradient(180deg, rgba(14, 16, 24, 0.9), rgba(10, 12, 18, 0.9));
+  padding: 1.1rem;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
   box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
 }
 
 .card h3 {
@@ -388,7 +411,7 @@ main {
 
 .card p {
   margin: 0;
-  color: #333;
+  color: #d4ddf1;
   font-size: 0.95rem;
 }
 
@@ -405,7 +428,7 @@ main {
   border-radius: 999px;
   padding: 0.2rem 0.52rem;
   color: var(--muted);
-  background: #fff;
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .metric-list {
@@ -427,8 +450,9 @@ main {
 .panel {
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  background: var(--surface);
+  background: linear-gradient(170deg, rgba(12, 14, 22, 0.94), rgba(15, 18, 26, 0.9));
   padding: 1.15rem;
+  box-shadow: var(--shadow);
 }
 
 .panel h3 {
@@ -438,7 +462,7 @@ main {
 
 .panel p,
 .panel li {
-  color: #343434;
+  color: #d4ddf1;
   font-size: 0.94rem;
 }
 
@@ -487,7 +511,7 @@ main {
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
   padding: 0.85rem;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .timeline strong {
@@ -504,12 +528,13 @@ main {
   overflow-x: auto;
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  background: #fff;
+  background: transparent;
 }
 
 th,
@@ -531,8 +556,9 @@ th {
 .prose {
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  background: #fff;
-  padding: clamp(1rem, 0.8rem + 1vw, 1.6rem);
+  background: linear-gradient(160deg, rgba(10, 12, 18, 0.96), rgba(6, 7, 12, 0.92));
+  padding: clamp(1.1rem, 0.9rem + 1vw, 1.7rem);
+  box-shadow: var(--shadow);
 }
 
 .prose h1,
@@ -550,7 +576,44 @@ th {
 
 .prose p {
   margin: 0 0 0.95rem;
-  color: #262626;
+  color: #d8e1f1;
+}
+
+.info-figure {
+  border: 1px solid rgba(102, 228, 255, 0.4);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  margin: 1rem 0;
+  background: radial-gradient(circle at 20% 20%, rgba(102, 228, 255, 0.14), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(180, 156, 255, 0.12), transparent 38%),
+    rgba(255, 255, 255, 0.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+}
+
+.info-figure svg {
+  width: 100%;
+  height: auto;
+}
+
+.code-block {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #0a0d14;
+  padding: 0.85rem;
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  font-family: "IBM Plex Mono", monospace;
+  color: #d6f5ff;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.diagram {
+  border: 1px dashed rgba(102, 228, 255, 0.4);
+  background: rgba(255, 255, 255, 0.02);
+  padding: 0.85rem;
+  border-radius: var(--radius-md);
+  font-family: "IBM Plex Mono", monospace;
+  color: #cfe2ff;
+  white-space: pre-wrap;
 }
 
 .prose ul,
@@ -565,7 +628,7 @@ th {
 
 .callout {
   border-left: 4px solid var(--accent);
-  background: #fff6f3;
+  background: rgba(102, 228, 255, 0.08);
   padding: 0.8rem 0.95rem;
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
@@ -584,7 +647,7 @@ th {
 form {
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  background: #fff;
+  background: rgba(10, 12, 18, 0.9);
   padding: 1rem;
 }
 
@@ -601,11 +664,12 @@ label {
 input,
 textarea {
   width: 100%;
-  border: 1px solid #cbc3b4;
-  background: #fffcf8;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
   border-radius: 10px;
   padding: 0.62rem 0.72rem;
   font: inherit;
+  color: var(--ink);
 }
 
 textarea {
@@ -619,7 +683,7 @@ button:focus-visible,
 .button:focus-visible,
 .nav-link:focus-visible,
 a:focus-visible {
-  outline: 3px solid rgba(216, 90, 43, 0.35);
+  outline: 3px solid rgba(102, 228, 255, 0.4);
   outline-offset: 2px;
 }
 
@@ -717,7 +781,7 @@ a:focus-visible {
     top: 74px;
     left: 0;
     right: 0;
-    background: rgba(246, 243, 236, 0.98);
+    background: rgba(5, 6, 10, 0.95);
     border-bottom: 1px solid var(--line);
     padding: 0.8rem 1.2rem 1rem;
     flex-direction: column;

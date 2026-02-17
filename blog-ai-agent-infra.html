@@ -51,6 +51,32 @@
             deployment into custom engineering.
           </p>
 
+          <div class="info-figure">
+            <p class="small">Agent step latency distribution</p>
+            <svg viewBox="0 0 320 120" role="img" aria-label="Agent latency">
+              <rect x="0" y="0" width="320" height="120" fill="rgba(255,255,255,0.04)" rx="10" />
+              <polyline points="14,90 54,76 94,70 134,62 174,58 214,50 254,44 294,40" fill="none" stroke="rgba(102,228,255,0.9)" stroke-width="5" stroke-linecap="round" />
+              <circle cx="174" cy="58" r="5" fill="#b49cff" />
+              <text x="168" y="50" fill="#a9b4cc" font-size="10">tool call</text>
+            </svg>
+          </div>
+
+          <pre class="code-block"><code>// Agent runtime limits
+limits:
+  max_steps: 24
+  max_tool_calls: 12
+  per_tool_budget:
+    sql: 5
+    cloud_cli: 3
+  safety:
+    blocklist: ["iam:Delete*", "prod-db:DropTable"]
+    approval_required: ["change:production-config"]</code></pre>
+
+          <pre class="diagram">[Ingress] -> [Agent Orchestrator] -> [Policy Layer]
+                                 |-> [Toolbox: APIs, DB, Queues]
+                                 |-> [Memory Store] (ttl, size caps)
+                                 |-> [Observability Stream]</pre>
+
           <h2>Agent infrastructure building blocks</h2>
           <ul>
             <li>Execution runtime for planning and tool invocation</li>

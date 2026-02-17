@@ -54,6 +54,31 @@
             excellence (COE) solves this by creating one durable operating model across platform and product teams.
           </p>
 
+          <div class="info-figure">
+            <p class="small">COE rollout impact</p>
+            <svg viewBox="0 0 320 120" role="img" aria-label="COE impact">
+              <rect x="0" y="0" width="320" height="120" fill="rgba(255,255,255,0.04)" rx="10" />
+              <polyline points="14,94 70,80 126,68 182,54 238,40 294,30" fill="none" stroke="rgba(102,228,255,0.9)" stroke-width="5" stroke-linecap="round" />
+              <text x="18" y="18" fill="#a9b4cc" font-size="10">Time to production-ready obs</text>
+            </svg>
+          </div>
+
+          <pre class="code-block"><code>// COE review artifact (template)
+service: payments
+owner: team-commerce
+tier: 0
+observability:
+  dashboards: 3
+  alerts: 8 (owned: 8/8)
+  slo: latency-p50,p95; availability
+runbook: https://runbooks/payments
+exceptions: none</code></pre>
+
+          <pre class="diagram">[COE Standards] -> [Service Template] -> [CI Checks]
+                                 |-> [Dash/Alert Kits]
+                                 |-> [Training & Reviews]
+Outcome: Fewer escalations + faster onboarding</pre>
+
           <h2>What a COE is, and what it is not</h2>
           <p>
             A COE is not a ticket queue where one central team builds dashboards for everyone. It is a multiplier model

@@ -52,6 +52,37 @@
             count.
           </p>
 
+          <div class="info-figure">
+            <p class="small">Signal to noise over time</p>
+            <svg viewBox="0 0 320 120" role="img" aria-label="Signal to noise chart">
+              <defs>
+                <linearGradient id="grad-mon" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#66e4ff" stop-opacity="0.9" />
+                  <stop offset="100%" stop-color="#58d69a" stop-opacity="0.8" />
+                </linearGradient>
+              </defs>
+              <rect x="0" y="0" width="320" height="120" fill="rgba(255,255,255,0.04)" rx="10" />
+              <polyline points="12,90 60,82 108,66 156,58 204,44 252,32 300,28" fill="none" stroke="url(#grad-mon)" stroke-width="6" stroke-linecap="round" />
+              <polyline points="12,96 60,94 108,92 156,88 204,84 252,82 300,80" fill="none" stroke="#444b57" stroke-width="3" stroke-dasharray="6 6" />
+              <text x="16" y="20" fill="#a9b4cc" font-size="10">noise floor</text>
+            </svg>
+          </div>
+
+          <pre class="code-block"><code>// Example SLO alert that avoids paging on noise
+alert: api_latency_slo
+expr: |
+  slo:error_budget_burn_rate{service="payments",window="1h"} &gt; 4
+  and slo:error_budget_burn_rate{service="payments",window="6h"} &gt; 2
+for: 10m
+labels:
+  severity: page
+annotations:
+  runbook: https://runbooks.company.com/payments-latency</code></pre>
+
+          <pre class="diagram">[Edge] -> [Ingress] -> [Service Mesh] -> [Services]
+                 \\-> [Observability Bus] -> [Metrics|Logs|Traces]
+                        \\-> [SLO Engine] -> [Pager/Status]</pre>
+
           <h2>Design telemetry around decision points</h2>
           <p>For each service tier, define which decisions telemetry should support:</p>
           <ul>

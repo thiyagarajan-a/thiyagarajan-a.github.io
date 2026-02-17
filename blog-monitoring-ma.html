@@ -54,6 +54,32 @@
             come from one bad migration step. They come from ambiguity that accumulates across many small decisions.
           </p>
 
+          <div class="info-figure">
+            <p class="small">Tool consolidation vs incident duration</p>
+            <svg viewBox="0 0 320 120" role="img" aria-label="Consolidation impact">
+              <rect x="0" y="0" width="320" height="120" fill="rgba(255,255,255,0.04)" rx="10" />
+              <polyline points="16,96 70,86 124,70 178,56 232,44 286,38" fill="none" stroke="rgba(102,228,255,0.9)" stroke-width="5" stroke-linecap="round" />
+              <text x="20" y="18" fill="#a9b4cc" font-size="10">MTTR drops as tools unify</text>
+            </svg>
+          </div>
+
+          <pre class="code-block"><code>// Ownership map (excerpt)
+service: checkout
+owner: team-commerce-platform
+severity: tier-0
+signals:
+  logs: datadog
+  traces: datadog
+  metrics: prom + datadog bridge
+  runbook: https://runbooks/checkout
+notes: "keep dual-telemetry until Wave2 cutover"</code></pre>
+
+          <pre class="diagram">Company A Stack -> [Bridge] -> Shared Observability Bus <- [Bridge] <- Company B Stack
+                                       |
+                                  [Incident Hub]
+                                       |
+                         [Unified Severity + Ownership Model]</pre>
+
           <p>
             This article outlines a practical monitoring integration approach that keeps service reliability stable while
             consolidating infrastructure and operating models.

@@ -54,6 +54,32 @@
             patterns create burnout, incident inconsistency, and delivery friction.
           </p>
 
+          <div class="info-figure">
+            <p class="small">Pager load per engineer</p>
+            <svg viewBox="0 0 320 120" role="img" aria-label="Pager load chart">
+              <rect x="0" y="0" width="320" height="120" fill="rgba(255,255,255,0.04)" rx="10" />
+              <polyline points="16,92 64,86 112,70 160,54 208,44 256,38 304,32" fill="none" stroke="rgba(102,228,255,0.9)" stroke-width="5" stroke-linecap="round" />
+              <text x="20" y="18" fill="#a9b4cc" font-size="10">After redistribution & automation</text>
+            </svg>
+          </div>
+
+          <pre class="code-block"><code>// SRE engagement modes (policy snippet)
+engagement:
+  embedded:
+    duration_weeks: 6
+    exit_criteria:
+      - runbook coverage &gt;= 90%
+      - alert ownership 100%
+  consultative:
+    scope: standards, reviews, SLO design
+  platform:
+    scope: shared tooling, automation, on-call quality</code></pre>
+
+          <pre class="diagram">[Product Teams] --(Consult)--> [SRE]
+[Critical Launch] --(Embed)--> [SRE]
+[Platform Stack] --(Own)--> [SRE Platform]
+Outputs: runbooks, SLOs, policy, automation</pre>
+
           <p>
             Scaling SRE is less about headcount and more about system design: team topology, service ownership, on-call
             quality, and reliability governance.

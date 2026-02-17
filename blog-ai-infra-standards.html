@@ -51,6 +51,51 @@
             avoid this is to define infrastructure standards before growth makes inconsistency expensive.
           </p>
 
+          <div class="info-figure">
+            <p class="small">Control plane coverage across environments</p>
+            <svg viewBox="0 0 320 120" role="img" aria-label="Control plane coverage chart">
+              <defs>
+                <linearGradient id="grad-ai" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#66e4ff" stop-opacity="0.9" />
+                  <stop offset="100%" stop-color="#b49cff" stop-opacity="0.8" />
+                </linearGradient>
+              </defs>
+              <rect x="0" y="0" width="320" height="120" fill="rgba(255,255,255,0.04)" rx="10" />
+              <rect x="18" y="60" width="36" height="42" fill="url(#grad-ai)" rx="6" />
+              <rect x="76" y="46" width="36" height="56" fill="url(#grad-ai)" rx="6" />
+              <rect x="134" y="30" width="36" height="72" fill="url(#grad-ai)" rx="6" />
+              <rect x="192" y="22" width="36" height="80" fill="url(#grad-ai)" rx="6" />
+              <rect x="250" y="18" width="36" height="84" fill="url(#grad-ai)" rx="6" />
+              <text x="18" y="110" fill="#a9b4cc" font-size="10">Dev</text>
+              <text x="78" y="110" fill="#a9b4cc" font-size="10">Test</text>
+              <text x="136" y="110" fill="#a9b4cc" font-size="10">Staging</text>
+              <text x="190" y="110" fill="#a9b4cc" font-size="10">Prod</text>
+              <text x="244" y="110" fill="#a9b4cc" font-size="10">Regulated</text>
+            </svg>
+          </div>
+
+          <pre class="code-block"><code># Policy gate for AI workloads
+apiVersion: policy/v1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: ai-runtime-guardrails
+spec:
+  matchConstraints:
+    resourceRules:
+      - apiGroups: ["apps"]
+        apiVersions: ["v1"]
+        operations: ["CREATE","UPDATE"]
+        resources: ["deployments"]
+  validations:
+    - expression: "has(object.metadata.labels.service) && has(object.metadata.labels.owner)"
+      message: "service/owner labels required"
+    - expression: "object.spec.template.spec.containers.all(c, c.resources.limits.cpu &lt;= '4')"
+      message: "hard cap on CPU for AI runtimes"</code></pre>
+
+          <pre class="diagram">[Client] -> [API Gateway] -> [Inference Service]
+                    \\-> [Feature Store] -> [Model Artifacts]
+              Observability Bus -> [Tracing][Metrics][Logs]</pre>
+
           <h2>Start with a reference control model</h2>
           <p>AI infrastructure should be managed through three explicit control layers:</p>
           <ul>

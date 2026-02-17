@@ -51,6 +51,35 @@
             consolidation program is not just tool migration; it is platform standardization.
           </p>
 
+          <div class="info-figure">
+            <p class="small">Coverage after consolidation</p>
+            <svg viewBox="0 0 320 120" role="img" aria-label="Coverage chart">
+              <rect x="0" y="0" width="320" height="120" fill="rgba(255,255,255,0.04)" rx="10" />
+              <rect x="20" y="30" width="40" height="70" fill="rgba(102,228,255,0.6)" rx="8" />
+              <rect x="90" y="26" width="40" height="74" fill="rgba(102,228,255,0.6)" rx="8" />
+              <rect x="160" y="18" width="40" height="82" fill="rgba(180,156,255,0.6)" rx="8" />
+              <rect x="230" y="14" width="40" height="86" fill="rgba(88,214,154,0.7)" rx="8" />
+              <text x="22" y="24" fill="#a9b4cc" font-size="10">logs</text>
+              <text x="94" y="24" fill="#a9b4cc" font-size="10">metrics</text>
+              <text x="160" y="12" fill="#a9b4cc" font-size="10">traces</text>
+              <text x="228" y="12" fill="#a9b4cc" font-size="10">incidents</text>
+            </svg>
+          </div>
+
+          <pre class="code-block"><code>// Monitor template fragment
+type: service check
+query: "datadog.agent.up{*} by {host}"
+tags:
+  - service:core
+  - owner:platform
+notify_no_data: true
+require_full_window: true</code></pre>
+
+          <pre class="diagram">[Apps] -> [Datadog Ingest] -> [Logs|Metrics|Traces]
+                            -> [Ownership + Tags]
+                            -> [Dashboards][SLOs][Incidents]
+Single control plane enforces schema + runbooks</pre>
+
           <h2>What single-pane should actually mean</h2>
           <p>
             Single-pane does not mean one dashboard for everything. It means one consistent operating environment for

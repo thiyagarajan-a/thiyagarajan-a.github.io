@@ -58,6 +58,32 @@
             room fills with questions before evidence is organized. When this happens, cognitive load spikes and the
             first responder loses control of the timeline.
           </p>
+
+          <div class="info-figure">
+            <p class="small">First-five-minute control loop</p>
+            <svg viewBox="0 0 320 120" role="img" aria-label="First five minutes loop">
+              <rect x="0" y="0" width="320" height="120" fill="rgba(255,255,255,0.04)" rx="10" />
+              <circle cx="64" cy="60" r="24" fill="rgba(102,228,255,0.25)" stroke="#66e4ff" />
+              <circle cx="160" cy="60" r="24" fill="rgba(180,156,255,0.25)" stroke="#b49cff" />
+              <circle cx="256" cy="60" r="24" fill="rgba(88,214,154,0.3)" stroke="#58d69a" />
+              <text x="44" y="64" fill="#a9b4cc" font-size="10">detect</text>
+              <text x="140" y="64" fill="#a9b4cc" font-size="10">orient</text>
+              <text x="244" y="64" fill="#a9b4cc" font-size="10">act</text>
+            </svg>
+          </div>
+
+          <pre class="code-block"><code>// First five minute script (Datadog)
+1) check service map impact by tag(service:*, env:prod)
+2) compare deploy timeline: deployments in last 30m
+3) pull Bits AI summary: top monitors correlated
+4) declare incident with owner + comms channel
+5) choose mitigation: rollback / traffic shift / scale out</code></pre>
+
+          <pre class="diagram">[Alert Storm] -> [Triage]
+               -> [Context fetch: tags, deploys, owners]
+               -> [AI summary + hypothesis]
+               -> [Mitigation path]
+               -> [Comms update + next checkpoint]</pre>
           <p>
             In the summit talk, I framed this as operational chaos: engineers trying to recover service while navigating
             disconnected tools, competing notifications, and low-context alerts. The practical objective is simple:

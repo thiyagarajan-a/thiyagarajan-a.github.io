@@ -54,6 +54,39 @@
             velocity, and failover behavior that has never been tested under pressure.
           </p>
 
+          <div class="info-figure">
+            <p class="small">Traffic posture by region</p>
+            <svg viewBox="0 0 320 120" role="img" aria-label="Traffic posture">
+              <rect x="0" y="0" width="320" height="120" fill="rgba(255,255,255,0.04)" rx="10" />
+              <rect x="26" y="54" width="48" height="50" fill="rgba(102,228,255,0.6)" rx="8" />
+              <rect x="100" y="38" width="48" height="66" fill="rgba(180,156,255,0.6)" rx="8" />
+              <rect x="174" y="32" width="48" height="72" fill="rgba(88,214,154,0.7)" rx="8" />
+              <rect x="248" y="46" width="48" height="58" fill="rgba(102,228,255,0.6)" rx="8" />
+              <text x="30" y="108" fill="#a9b4cc" font-size="10">us-east</text>
+              <text x="104" y="108" fill="#a9b4cc" font-size="10">us-west</text>
+              <text x="182" y="108" fill="#a9b4cc" font-size="10">eu-west</text>
+              <text x="260" y="108" fill="#a9b4cc" font-size="10">ap-south</text>
+            </svg>
+          </div>
+
+          <pre class="code-block"><code># Global rollout guard
+trafficPolicy:
+  stages:
+    - region: us-west
+      percent: 20
+    - region: us-west
+      percent: 100
+    - region: eu-west
+      percent: 50
+    - region: eu-west
+      percent: 100</code></pre>
+
+          <pre class="diagram">[Users] -> [GSLB] -> [Regional Ingress]
+                           |-> us-west clusters
+                           |-> eu-west clusters
+                           |-> ap-south clusters
+Observability: unified schema + SLOs per region</pre>
+
           <p>
             The goal is not just regional presence. The goal is predictable global behavior with local resilience. This
             requires architecture choices and operating discipline to be designed together.

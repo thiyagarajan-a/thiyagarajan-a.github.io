@@ -51,6 +51,30 @@
             operating models were never updated for the target platform.
           </p>
 
+          <div class="info-figure">
+            <p class="small">Migration tranche burn-down</p>
+            <svg viewBox="0 0 320 120" role="img" aria-label="Migration burndown">
+              <rect x="0" y="0" width="320" height="120" fill="rgba(255,255,255,0.04)" rx="10" />
+              <rect x="18" y="24" width="42" height="72" fill="rgba(180,156,255,0.55)" rx="8" />
+              <rect x="78" y="34" width="42" height="62" fill="rgba(102,228,255,0.55)" rx="8" />
+              <rect x="138" y="46" width="42" height="50" fill="rgba(88,214,154,0.65)" rx="8" />
+              <rect x="198" y="62" width="42" height="34" fill="rgba(88,214,154,0.65)" rx="8" />
+              <rect x="258" y="76" width="42" height="20" fill="rgba(88,214,154,0.65)" rx="8" />
+            </svg>
+          </div>
+
+          <pre class="code-block"><code># Cutover checklist (excerpt)
+- traffic_shift: 20% -> 50% -> 100% with error budget checks
+- data: dual-write for 14 days, verify read parity daily
+- controls: WAF, rate limits, geo allow/deny synced
+- observability: dashboards pinned to runbook, owners on-call
+- rollback: DNS + config flag ready, no code revert required</code></pre>
+
+          <pre class="diagram">On-Prem Tier -> [Data Sync] -> Cloud Landing Zone
+                                 |-> Shared VPC
+                                 |-> Control Plane (IAM, Policy)
+             Clients -> GSLB -> Cloud Ingress -> Services -> DB</pre>
+
           <h2>Migration should be risk-first, not inventory-first</h2>
           <p>
             Start by classifying workloads across two axes: business criticality and migration complexity. This gives a

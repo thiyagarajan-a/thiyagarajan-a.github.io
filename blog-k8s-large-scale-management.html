@@ -50,6 +50,36 @@
             count grow, policy drift, upgrade inconsistency, and ownership ambiguity become the dominant failure modes.
           </p>
 
+          <div class="info-figure">
+            <p class="small">Cluster upgrade coverage</p>
+            <svg viewBox="0 0 320 120" role="img" aria-label="Cluster upgrade coverage">
+              <rect x="0" y="0" width="320" height="120" fill="rgba(255,255,255,0.04)" rx="10" />
+              <polyline points="16,94 64,70 112,54 160,44 208,36 256,30 304,26" fill="none" stroke="rgba(102,228,255,0.9)" stroke-width="6" stroke-linecap="round" />
+              <circle cx="112" cy="54" r="5" fill="#66e4ff" />
+              <circle cx="208" cy="36" r="5" fill="#66e4ff" />
+              <text x="20" y="18" fill="#a9b4cc" font-size="10">Upgrades complete</text>
+            </svg>
+          </div>
+
+          <pre class="code-block"><code># Kubernetes upgrade window guard
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: control-plane-protection
+spec:
+  minAvailable: 2
+  selector:
+    matchLabels:
+      app: api-server</code></pre>
+
+          <pre class="diagram">[Edge LB]
+    |
+[Ingress] -> [Gateway API] -> [Service Mesh] -> [Workloads]
+    |                                |
+ [OPA Gate]                      [Policy/OPA]
+    |
+[Observability Bus] -> [SLOs + Burn Alerts]</pre>
+
           <h2>Fleet model fundamentals</h2>
           <ul>
             <li>Standard baseline profiles for cluster classes</li>
