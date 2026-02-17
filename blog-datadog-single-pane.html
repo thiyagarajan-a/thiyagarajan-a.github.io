@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Datadog as a Single Pane of Observability: Consolidation Without Blind Spots</title>
+    <meta
+      name="description"
+      content="Detailed strategy for using Datadog as a single observability pane across logs, metrics, traces, and incident operations at scale."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Sora:wght@500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script defer src="scripts/main.js"></script>
+  </head>
+  <body data-page="blog">
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">TA</span>
+          <span class="brand-text">Theo ( Thiyagarajan Anandan )</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <nav id="site-nav" class="primary-nav" aria-label="Primary">
+          <a class="nav-link" data-page="home" href="index.html">Home</a>
+          <a class="nav-link" data-page="about" href="about.html">About</a>
+          <a class="nav-link" data-page="projects" href="projects.html">Projects</a>
+          <a class="nav-link" data-page="blog" href="blog.html">Blog</a>
+          <a class="nav-link" data-page="resume" href="resume.html">Resume</a>
+          <a class="nav-link" data-page="contact" href="contact.html">Contact</a>
+          <span class="now-pill">Currently: Platform / Reliability / Observability</span>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content">
+      <section class="section">
+        <div class="container prose reveal">
+          <p class="section-eyebrow">Datadog | Observability | Platform Consolidation</p>
+          <h1>Datadog as a Single Pane of Observability: Consolidation Without Blind Spots</h1>
+          <p class="small">Published: February 2026</p>
+
+          <p>
+            Teams adopt a single-pane observability strategy to reduce operational fragmentation. The challenge is that
+            consolidation can hide important details if governance and data contracts are weak. A successful Datadog
+            consolidation program is not just tool migration; it is platform standardization.
+          </p>
+
+          <h2>What single-pane should actually mean</h2>
+          <p>
+            Single-pane does not mean one dashboard for everything. It means one consistent operating environment for
+            metrics, logs, traces, ownership, and incident response workflows.
+          </p>
+
+          <h2>Consolidation foundations</h2>
+          <ul>
+            <li>Shared tagging and service naming standards</li>
+            <li>Unified ownership model for services and alerts</li>
+            <li>Consistent SLO semantics across domains</li>
+            <li>Runbook and escalation link requirements in alerts</li>
+          </ul>
+
+          <h2>Migration sequence</h2>
+          <ol>
+            <li>Ingest baseline telemetry from all major services</li>
+            <li>Standardize metadata and ownership fields</li>
+            <li>Map old alert policies to tiered response model</li>
+            <li>Cut over incident workflows with dual-run validation</li>
+            <li>Retire legacy dashboards and duplicated paging paths</li>
+          </ol>
+
+          <h2>Avoid these anti-patterns</h2>
+          <ul>
+            <li>Dashboard sprawl without ownership hygiene</li>
+            <li>Copying legacy alert noise into the target platform</li>
+            <li>Treating migration as complete without runbook parity</li>
+            <li>Ignoring cost and cardinality controls for high-volume telemetry</li>
+          </ul>
+
+          <h2>Success metrics</h2>
+          <ul>
+            <li>Reduction in duplicate alerts and duplicated incident tickets</li>
+            <li>Improved median time to first actionable signal</li>
+            <li>Higher percent of alerts with complete owner metadata</li>
+            <li>Reduced tool overlap and support overhead</li>
+          </ul>
+
+          <h2>Closing note</h2>
+          <p>
+            Datadog as single pane works when data contracts and operational ownership are standardized first. With that
+            foundation, teams get faster incident response, better cross-service visibility, and lower cognitive load.
+          </p>
+
+          <p><a class="button secondary" href="blog.html">Back to Blog</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p class="small">(c) <span data-year></span> Thiyagarajan Anandan. Built for operational clarity.</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/anandant" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="mailto:thiyagamcitp@gmail.com">thiyagamcitp@gmail.com</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

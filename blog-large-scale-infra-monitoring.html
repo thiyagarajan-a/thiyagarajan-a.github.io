@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monitoring Large-Scale Infrastructure: Signal Design, Ownership, and Noise Control</title>
+    <meta
+      name="description"
+      content="Detailed monitoring strategy for large-scale infrastructure, including telemetry architecture, ownership models, and noise reduction."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Sora:wght@500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script defer src="scripts/main.js"></script>
+  </head>
+  <body data-page="blog">
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">TA</span>
+          <span class="brand-text">Theo ( Thiyagarajan Anandan )</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <nav id="site-nav" class="primary-nav" aria-label="Primary">
+          <a class="nav-link" data-page="home" href="index.html">Home</a>
+          <a class="nav-link" data-page="about" href="about.html">About</a>
+          <a class="nav-link" data-page="projects" href="projects.html">Projects</a>
+          <a class="nav-link" data-page="blog" href="blog.html">Blog</a>
+          <a class="nav-link" data-page="resume" href="resume.html">Resume</a>
+          <a class="nav-link" data-page="contact" href="contact.html">Contact</a>
+          <span class="now-pill">Currently: Platform / Reliability / Observability</span>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content">
+      <section class="section">
+        <div class="container prose reveal">
+          <p class="section-eyebrow">Monitoring | Scale | Reliability</p>
+          <h1>Monitoring Large-Scale Infrastructure: Signal Design, Ownership, and Noise Control</h1>
+          <p class="small">Published: February 2026</p>
+
+          <p>
+            Large-scale monitoring fails when data volume grows faster than signal quality. Teams collect more metrics,
+            logs, and traces, but incident response does not improve because ownership and semantics remain unclear.
+            Effective monitoring at scale depends on disciplined signal design and operating models, not raw telemetry
+            count.
+          </p>
+
+          <h2>Design telemetry around decision points</h2>
+          <p>For each service tier, define which decisions telemetry should support:</p>
+          <ul>
+            <li>Fast health triage</li>
+            <li>Root cause isolation</li>
+            <li>Escalation routing</li>
+            <li>Capacity and performance planning</li>
+          </ul>
+
+          <p>
+            If a signal does not support one of these actions, it is usually low value at incident time.
+          </p>
+
+          <h2>Standard signal contract</h2>
+          <p>At minimum, enforce common metadata on all telemetry:</p>
+          <ul>
+            <li>service</li>
+            <li>owner</li>
+            <li>environment</li>
+            <li>region</li>
+            <li>criticality tier</li>
+            <li>dependency class</li>
+          </ul>
+
+          <h2>Alert quality model</h2>
+          <p>
+            Alerting should be classified into four categories with separate policy thresholds:
+          </p>
+          <ol>
+            <li>Immediate user-impact incidents</li>
+            <li>Degrading patterns requiring short-term action</li>
+            <li>Operational debt requiring planned work</li>
+            <li>Informational events for trend analysis only</li>
+          </ol>
+
+          <p>
+            This separation reduces paging noise and preserves responder focus.
+          </p>
+
+          <h2>Ownership and escalation</h2>
+          <p>Every production alert should include:</p>
+          <ul>
+            <li>Primary owner team</li>
+            <li>Secondary escalation team</li>
+            <li>Service runbook link</li>
+            <li>Known rollback or mitigation actions</li>
+          </ul>
+
+          <p>
+            If any of these are missing, alert should not be considered production-ready.
+          </p>
+
+          <h2>Noise reduction techniques that work</h2>
+          <ul>
+            <li>Deduplicate by incident fingerprint and dependency graph context</li>
+            <li>Suppress cascading downstream alerts during known upstream incidents</li>
+            <li>Use multi-signal confirmation for noisy infrastructure layers</li>
+            <li>Retire stale alerts quarterly with ownership reviews</li>
+          </ul>
+
+          <h2>Monitoring review cadence</h2>
+          <p>Run a monthly quality review with hard metrics:</p>
+          <ul>
+            <li>Alert-to-incident conversion ratio</li>
+            <li>False-positive rate</li>
+            <li>Median time to first actionable signal</li>
+            <li>Percentage of alerts with complete ownership metadata</li>
+          </ul>
+
+          <h2>Closing note</h2>
+          <p>
+            Monitoring at scale is an engineering system and a management system. When telemetry contracts, ownership,
+            and alert policy are designed together, infrastructure teams spend less time filtering noise and more time
+            restoring service quickly.
+          </p>
+
+          <p><a class="button secondary" href="blog.html">Back to Blog</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p class="small">(c) <span data-year></span> Thiyagarajan Anandan. Built for operational clarity.</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/anandant" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="mailto:thiyagamcitp@gmail.com">thiyagamcitp@gmail.com</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

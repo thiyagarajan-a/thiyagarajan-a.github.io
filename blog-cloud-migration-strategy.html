@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cloud Migration Strategies for Platform Leaders: Sequencing, Risk, and Adoption</title>
+    <meta
+      name="description"
+      content="Detailed cloud migration strategy for large organizations, covering sequencing, reliability controls, and team adoption during transformation."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Sora:wght@500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script defer src="scripts/main.js"></script>
+  </head>
+  <body data-page="blog">
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">TA</span>
+          <span class="brand-text">Theo ( Thiyagarajan Anandan )</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <nav id="site-nav" class="primary-nav" aria-label="Primary">
+          <a class="nav-link" data-page="home" href="index.html">Home</a>
+          <a class="nav-link" data-page="about" href="about.html">About</a>
+          <a class="nav-link" data-page="projects" href="projects.html">Projects</a>
+          <a class="nav-link" data-page="blog" href="blog.html">Blog</a>
+          <a class="nav-link" data-page="resume" href="resume.html">Resume</a>
+          <a class="nav-link" data-page="contact" href="contact.html">Contact</a>
+          <span class="now-pill">Currently: Platform / Reliability / Observability</span>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content">
+      <section class="section">
+        <div class="container prose reveal">
+          <p class="section-eyebrow">Cloud Migration | Platform Strategy | Transformation</p>
+          <h1>Cloud Migration Strategies for Platform Leaders: Sequencing, Risk, and Adoption</h1>
+          <p class="small">Published: February 2026</p>
+
+          <p>
+            Cloud migration programs fail less from technical impossibility and more from sequencing mistakes. Teams
+            migrate low-risk services for too long, delay critical dependency modernization, and discover late that
+            operating models were never updated for the target platform.
+          </p>
+
+          <h2>Migration should be risk-first, not inventory-first</h2>
+          <p>
+            Start by classifying workloads across two axes: business criticality and migration complexity. This gives a
+            practical wave plan:
+          </p>
+          <ul>
+            <li>Wave 1: low complexity, medium value workloads to validate platform patterns</li>
+            <li>Wave 2: high-value workloads with manageable dependency trees</li>
+            <li>Wave 3: complex core services after tooling and governance maturity</li>
+            <li>Wave 4: long-tail and optimization clean-up</li>
+          </ul>
+
+          <h2>Define target-state controls before the first move</h2>
+          <p>Before migration, align on non-negotiable controls:</p>
+          <ul>
+            <li>Identity and access baseline</li>
+            <li>Network segmentation and trust boundaries</li>
+            <li>Deployment and rollback standards</li>
+            <li>Observability and incident response model</li>
+            <li>Cost and resource governance policy</li>
+          </ul>
+
+          <h2>Migration engineering patterns that scale</h2>
+          <ol>
+            <li>Template-based platform onboarding</li>
+            <li>Dual-run and parity validation windows</li>
+            <li>Progressive traffic shifting with health gates</li>
+            <li>Automated rollback triggers for key SLO regressions</li>
+          </ol>
+
+          <p>
+            The program should treat each migration as a product release with measurable quality, not as a one-time
+            infrastructure task.
+          </p>
+
+          <h2>People and operating model integration</h2>
+          <p>
+            Teams that move systems without changing responsibilities inherit old failure patterns on new infrastructure.
+            Align role clarity early:
+          </p>
+          <ul>
+            <li>What platform owns vs what application teams own</li>
+            <li>How on-call and escalation will work post-migration</li>
+            <li>How reliability debt will be prioritized against feature delivery</li>
+          </ul>
+
+          <h2>Migration program metrics</h2>
+          <ul>
+            <li>Workload migration completion by criticality tier</li>
+            <li>SLO change before vs after migration</li>
+            <li>Incident frequency and severity trend by migration wave</li>
+            <li>Onboarding lead time for migrated teams</li>
+            <li>Unit cost trend and efficiency ratio</li>
+          </ul>
+
+          <h2>Closing note</h2>
+          <p>
+            Cloud migration is a leadership program with technical implementation, not the other way around. When
+            sequencing, controls, and team operating models are integrated, migration produces lasting platform quality
+            instead of prolonged transition risk.
+          </p>
+
+          <p><a class="button secondary" href="blog.html">Back to Blog</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p class="small">(c) <span data-year></span> Thiyagarajan Anandan. Built for operational clarity.</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/anandant" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="mailto:thiyagamcitp@gmail.com">thiyagamcitp@gmail.com</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

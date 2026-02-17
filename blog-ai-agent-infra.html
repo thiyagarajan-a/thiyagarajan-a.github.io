@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facilitating AI Agent Infrastructure: Runtime Design, Guardrails, and Operations</title>
+    <meta
+      name="description"
+      content="Detailed guide to enabling AI agent infrastructure with runtime controls, observability, security guardrails, and operational reliability."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Sora:wght@500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script defer src="scripts/main.js"></script>
+  </head>
+  <body data-page="blog">
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">TA</span>
+          <span class="brand-text">Theo ( Thiyagarajan Anandan )</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <nav id="site-nav" class="primary-nav" aria-label="Primary">
+          <a class="nav-link" data-page="home" href="index.html">Home</a>
+          <a class="nav-link" data-page="about" href="about.html">About</a>
+          <a class="nav-link" data-page="projects" href="projects.html">Projects</a>
+          <a class="nav-link" data-page="blog" href="blog.html">Blog</a>
+          <a class="nav-link" data-page="resume" href="resume.html">Resume</a>
+          <a class="nav-link" data-page="contact" href="contact.html">Contact</a>
+          <span class="now-pill">Currently: Platform / Reliability / Observability</span>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content">
+      <section class="section">
+        <div class="container prose reveal">
+          <p class="section-eyebrow">AI Agents | Runtime Platform | Guardrails</p>
+          <h1>Facilitating AI Agent Infrastructure: Runtime Design, Guardrails, and Operations</h1>
+          <p class="small">Published: February 2026</p>
+
+          <p>
+            AI agents introduce a new infrastructure shape: long-running orchestration loops, tool execution, memory
+            patterns, and variable cost behavior. Platform teams need to support this safely without turning every
+            deployment into custom engineering.
+          </p>
+
+          <h2>Agent infrastructure building blocks</h2>
+          <ul>
+            <li>Execution runtime for planning and tool invocation</li>
+            <li>Policy layer for tool permissions and data access scope</li>
+            <li>State and memory services with lifecycle controls</li>
+            <li>Observability layer for step-level tracing and outcomes</li>
+            <li>Fallback and kill-switch controls for unsafe behavior</li>
+          </ul>
+
+          <h2>Guardrail categories</h2>
+          <ol>
+            <li><strong>Access guardrails:</strong> least-privilege tool and data permissions</li>
+            <li><strong>Behavior guardrails:</strong> step limits, timeout ceilings, retry policy bounds</li>
+            <li><strong>Safety guardrails:</strong> blocked action classes and approval workflows</li>
+            <li><strong>Cost guardrails:</strong> token and tool-call budget enforcement</li>
+          </ol>
+
+          <h2>Telemetry model for agent operations</h2>
+          <p>For each agent execution, capture:</p>
+          <ul>
+            <li>Request context and owner metadata</li>
+            <li>Plan steps and tool invocation graph</li>
+            <li>Latency per step and end-to-end completion time</li>
+            <li>Failure class and fallback pathway used</li>
+            <li>Cost footprint by model and tool</li>
+          </ul>
+
+          <p>
+            Without this step-level telemetry, debugging agent behavior becomes expensive and slow.
+          </p>
+
+          <h2>Release strategy for agent features</h2>
+          <ul>
+            <li>Start with constrained scopes and read-only capabilities</li>
+            <li>Use canary cohorts and explicit rollback controls</li>
+            <li>Progressively expand tool permissions based on reliability evidence</li>
+            <li>Gate critical actions with approval checkpoints</li>
+          </ul>
+
+          <h2>Operational playbooks</h2>
+          <p>Platform teams should maintain runbooks for:</p>
+          <ul>
+            <li>Tool failure storms and cascading retry loops</li>
+            <li>Unexpected cost spikes from token growth</li>
+            <li>Agent latency regressions tied to dependency failures</li>
+            <li>Policy drift and unauthorized action attempts</li>
+          </ul>
+
+          <h2>Closing note</h2>
+          <p>
+            Facilitating AI agent infrastructure is a platform reliability problem with new primitives. Teams that define
+            runtime standards, enforce guardrails, and instrument execution deeply can scale agents without sacrificing
+            control or operational safety.
+          </p>
+
+          <p><a class="button secondary" href="blog.html">Back to Blog</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p class="small">(c) <span data-year></span> Thiyagarajan Anandan. Built for operational clarity.</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/anandant" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="mailto:thiyagamcitp@gmail.com">thiyagamcitp@gmail.com</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Large-Scale Kubernetes Management: Fleet Operations, Upgrades, and Reliability</title>
+    <meta
+      name="description"
+      content="Detailed guide to managing Kubernetes at large scale across clusters, with upgrade strategy, policy governance, and reliability operations."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Sora:wght@500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script defer src="scripts/main.js"></script>
+  </head>
+  <body data-page="blog">
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">TA</span>
+          <span class="brand-text">Theo ( Thiyagarajan Anandan )</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <nav id="site-nav" class="primary-nav" aria-label="Primary">
+          <a class="nav-link" data-page="home" href="index.html">Home</a>
+          <a class="nav-link" data-page="about" href="about.html">About</a>
+          <a class="nav-link" data-page="projects" href="projects.html">Projects</a>
+          <a class="nav-link" data-page="blog" href="blog.html">Blog</a>
+          <a class="nav-link" data-page="resume" href="resume.html">Resume</a>
+          <a class="nav-link" data-page="contact" href="contact.html">Contact</a>
+          <span class="now-pill">Currently: Platform / Reliability / Observability</span>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content">
+      <section class="section">
+        <div class="container prose reveal">
+          <p class="section-eyebrow">Kubernetes | Fleet Management | Platform Reliability</p>
+          <h1>Large-Scale Kubernetes Management: Fleet Operations, Upgrades, and Reliability</h1>
+          <p class="small">Published: February 2026</p>
+
+          <p>
+            Kubernetes at scale is a fleet management problem, not a cluster setup task. As cluster count and team
+            count grow, policy drift, upgrade inconsistency, and ownership ambiguity become the dominant failure modes.
+          </p>
+
+          <h2>Fleet model fundamentals</h2>
+          <ul>
+            <li>Standard baseline profiles for cluster classes</li>
+            <li>Central policy governance with exception workflows</li>
+            <li>Shared service-level ownership metadata</li>
+            <li>Lifecycle automation for node pools and cluster addons</li>
+          </ul>
+
+          <h2>Upgrade discipline</h2>
+          <p>
+            Upgrade strategy should be continuous and tiered:
+          </p>
+          <ol>
+            <li>Pre-prod validation cluster with policy and workload conformance checks</li>
+            <li>Canary cluster rollout in one production region</li>
+            <li>Phased fleet progression by service criticality</li>
+            <li>Rollback checkpoints with explicit success criteria</li>
+          </ol>
+
+          <h2>Policy and security controls</h2>
+          <ul>
+            <li>Admission policy enforcement for runtime constraints</li>
+            <li>Namespace and identity segmentation by service tier</li>
+            <li>Network policy defaults that block implicit lateral movement</li>
+            <li>Secret management standards integrated into CI/CD</li>
+          </ul>
+
+          <h2>Reliability operations for cluster fleets</h2>
+          <p>Track cluster and workload reliability separately:</p>
+          <ul>
+            <li>Control plane health and API latency metrics</li>
+            <li>Scheduling pressure and autoscaling behavior</li>
+            <li>Pod disruption and restart pattern analysis</li>
+            <li>Service-level SLO impact from platform incidents</li>
+          </ul>
+
+          <h2>Ownership model</h2>
+          <p>
+            Platform teams should own cluster lifecycle, policy framework, and operational guardrails. Application teams
+            should own service runtime behavior and SLO compliance. Ambiguous boundaries create long incident chains.
+          </p>
+
+          <h2>Closing note</h2>
+          <p>
+            Large-scale Kubernetes management succeeds when fleet standards, upgrade discipline, and ownership models
+            are explicit. Platform maturity is measured by predictability, not by cluster count.
+          </p>
+
+          <p><a class="button secondary" href="blog.html">Back to Blog</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p class="small">(c) <span data-year></span> Thiyagarajan Anandan. Built for operational clarity.</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/anandant" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="mailto:thiyagamcitp@gmail.com">thiyagamcitp@gmail.com</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

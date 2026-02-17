@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Infrastructure Management Standards: Control Planes, Policy, and Reliability</title>
+    <meta
+      name="description"
+      content="Detailed standards for managing AI infrastructure at scale, including policy guardrails, runtime controls, and reliability operations."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Sora:wght@500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script defer src="scripts/main.js"></script>
+  </head>
+  <body data-page="blog">
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">TA</span>
+          <span class="brand-text">Theo ( Thiyagarajan Anandan )</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <nav id="site-nav" class="primary-nav" aria-label="Primary">
+          <a class="nav-link" data-page="home" href="index.html">Home</a>
+          <a class="nav-link" data-page="about" href="about.html">About</a>
+          <a class="nav-link" data-page="projects" href="projects.html">Projects</a>
+          <a class="nav-link" data-page="blog" href="blog.html">Blog</a>
+          <a class="nav-link" data-page="resume" href="resume.html">Resume</a>
+          <a class="nav-link" data-page="contact" href="contact.html">Contact</a>
+          <span class="now-pill">Currently: Platform / Reliability / Observability</span>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content">
+      <section class="section">
+        <div class="container prose reveal">
+          <p class="section-eyebrow">AI Infrastructure | Standards | Governance</p>
+          <h1>AI Infrastructure Management Standards: Control Planes, Policy, and Reliability</h1>
+          <p class="small">Published: February 2026</p>
+
+          <p>
+            AI infrastructure fails in predictable ways when standards lag demand. Teams spin up model services fast,
+            usage spikes, cost rises, and security and reliability controls are retrofitted under pressure. The way to
+            avoid this is to define infrastructure standards before growth makes inconsistency expensive.
+          </p>
+
+          <h2>Start with a reference control model</h2>
+          <p>AI infrastructure should be managed through three explicit control layers:</p>
+          <ul>
+            <li><strong>Platform controls:</strong> runtime images, compute classes, network boundaries, identity, and secrets</li>
+            <li><strong>Workload controls:</strong> model versioning, prompt/template lifecycle, dependency policy</li>
+            <li><strong>Operational controls:</strong> SLOs, budget limits, incident playbooks, and audit traceability</li>
+          </ul>
+
+          <h2>Baseline standards every AI workload must satisfy</h2>
+          <ol>
+            <li>Declarative deployment via IaC and policy checks</li>
+            <li>Strong identity separation for inference, retrieval, and orchestration layers</li>
+            <li>Encrypted data transit and scoped data retention defaults</li>
+            <li>Structured telemetry for latency, token usage, tool invocation, and failure classes</li>
+            <li>Versioned rollout and rollback behavior for model or prompt changes</li>
+          </ol>
+
+          <h2>Policy enforcement points</h2>
+          <p>
+            Standards only work when enforced at delivery boundaries. Put hard checks in CI/CD and admission controls:
+          </p>
+          <ul>
+            <li>Reject deployments with missing owner or service criticality tags</li>
+            <li>Block runtime images that are not in approved baseline lists</li>
+            <li>Require spend guardrails for workloads with variable token usage</li>
+            <li>Require incident routing metadata for all production AI endpoints</li>
+          </ul>
+
+          <h2>Reliability design for AI services</h2>
+          <p>
+            AI workloads require reliability policies beyond generic HTTP uptime. Define SLOs for:
+          </p>
+          <ul>
+            <li>First-token latency and full-response latency percentiles</li>
+            <li>Tool call success ratio and fallback frequency</li>
+            <li>Error budget policy by workload criticality tier</li>
+            <li>Output quality proxies where objective checks exist</li>
+          </ul>
+
+          <h2>Cost governance is part of reliability</h2>
+          <p>
+            Uncontrolled spend causes emergency throttling, which creates user-facing instability. Treat cost policy as
+            a reliability control:
+          </p>
+          <ul>
+            <li>Budget ceilings per environment and per workload class</li>
+            <li>Token and request anomaly detection with alerting thresholds</li>
+            <li>Graceful degradation paths when budgets are exceeded</li>
+            <li>Unit economics reporting by feature and team</li>
+          </ul>
+
+          <h2>Operating cadence</h2>
+          <p>Use a weekly AI platform review with four outputs:</p>
+          <ol>
+            <li>Policy violations and remediation status</li>
+            <li>SLO trends and incident review findings</li>
+            <li>Cost outliers and optimization actions</li>
+            <li>Roadmap priorities for shared platform controls</li>
+          </ol>
+
+          <h2>Closing note</h2>
+          <p>
+            AI infrastructure maturity is not model selection alone. It is management discipline. Teams that formalize
+            standards early gain safer scaling, lower incident volatility, and better engineering velocity over time.
+          </p>
+
+          <p><a class="button secondary" href="blog.html">Back to Blog</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p class="small">(c) <span data-year></span> Thiyagarajan Anandan. Built for operational clarity.</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/anandant" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="mailto:thiyagamcitp@gmail.com">thiyagamcitp@gmail.com</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
