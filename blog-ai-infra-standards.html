@@ -43,7 +43,7 @@
         <div class="container prose reveal">
           <p class="section-eyebrow">AI Infrastructure | Standards | Governance</p>
           <h1>AI Infrastructure Management Standards: Control Planes, Policy, and Reliability</h1>
-          <p class="small">Published: February 2026</p>
+          <p class="small">Published: January 2026</p>
 
           <p>
             AI infrastructure fails in predictable ways when standards lag demand. Teams spin up model services fast,
@@ -116,6 +116,55 @@
             AI infrastructure maturity is not model selection alone. It is management discipline. Teams that formalize
             standards early gain safer scaling, lower incident volatility, and better engineering velocity over time.
           </p>
+
+          <h2>Deep dive: reference architecture for director-level sponsorship</h2>
+          <p>
+            At director scale, standards have to map to clear control points. A pragmatic AI platform architecture has
+            four planes: <strong>Access</strong> (identity, policy, approvals), <strong>Runtime</strong> (container and
+            serverless profiles with GPU/CPU classes), <strong>Data</strong> (feature stores, vector stores, model
+            artifacts with lineage), and <strong>Observability</strong> (latency, cost, safety, and quality telemetry
+            with a single schema). Each plane publishes versioned contracts so application teams know what they can rely
+            on and platform teams know what they must not break.
+          </p>
+
+          <h2>Governance playbook: how to keep standards alive</h2>
+          <ol>
+            <li>Run a monthly “AI change control” where new models, prompts, and tools are proposed and risk-assessed.</li>
+            <li>Couple every model or prompt change with an explicit rollback path and data retention decision.</li>
+            <li>Track safety and cost exceptions with expirations; make renewals explicit, not implicit.</li>
+            <li>Publish an RFC index so product teams can see what policies are in flight and influence them early.</li>
+          </ol>
+
+          <h2>Reliability and safety signals that matter in 2026</h2>
+          <ul>
+            <li>Latency spread: P50, P95, P99 for first token and full completion across GPU/CPU pools.</li>
+            <li>Retrieval fidelity: recall/precision against gold datasets per domain; drift alerts when quality drops.</li>
+            <li>Safety enforcement: blocked prompt/tool calls, red-team scenario coverage, jailbreak detection rates.</li>
+            <li>Cost-to-outcome: tokens per successful task, tokens per qualified lead, tokens per resolved support case.</li>
+          </ul>
+
+          <h2>Operator runbooks that reduce cognitive load</h2>
+          <p>
+            Every AI workload should ship with three standard runbooks: <strong>Latency</strong> (what to scale, where to
+            cache, how to re-route), <strong>Quality</strong> (how to roll back prompts/models, how to validate against
+            reference sets), and <strong>Safety</strong> (how to disable dangerous tools, how to enforce stricter policy
+            when threat level rises). Keep them linked inside the service catalog entry, not in a doc jungle.
+          </p>
+
+          <h2>12-month maturity roadmap</h2>
+          <ol>
+            <li><strong>Quarter 1:</strong> Ship a unified metadata schema, enforce deploy gates, and baseline latency/cost SLOs.</li>
+            <li><strong>Quarter 2:</strong> Add red-team automation, safety scorecards, and per-feature cost allocation.</li>
+            <li><strong>Quarter 3:</strong> Introduce change simulation for prompts/models and automate rollback rehearsals.</li>
+            <li><strong>Quarter 4:</strong> Graduate to policy-aware AI agents with human approval loops and full audit.</li>
+          </ol>
+
+          <h2>Leader signals</h2>
+          <ul>
+            <li>Make AI platform reviews part of operating cadence with product, security, and finance in the room.</li>
+            <li>Tie promotions and goals to reducing unsafe debt, not only to shipping new models.</li>
+            <li>Publish a quarterly “AI reliability and cost” memo to keep executives aligned on trade-offs.</li>
+          </ul>
 
           <p><a class="button secondary" href="blog.html">Back to Blog</a></p>
         </div>
