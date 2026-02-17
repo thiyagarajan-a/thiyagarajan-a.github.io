@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case Study | Tagging as Context Fabric</title>
+    <meta
+      name="description"
+      content="Case study: building standards-first observability foundations to reduce cognitive load and improve incident response velocity."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Sora:wght@500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script defer src="scripts/main.js"></script>
+  </head>
+  <body data-page="projects">
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">TA</span>
+          <span class="brand-text">Anand Ant</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+        <nav id="site-nav" class="primary-nav" aria-label="Primary">
+          <a class="nav-link" data-page="home" href="index.html">Home</a>
+          <a class="nav-link" data-page="about" href="about.html">About</a>
+          <a class="nav-link" data-page="projects" href="projects.html">Projects</a>
+          <a class="nav-link" data-page="blog" href="blog.html">Blog</a>
+          <a class="nav-link" data-page="resume" href="resume.html">Resume</a>
+          <a class="nav-link" data-page="contact" href="contact.html">Contact</a>
+          <span class="now-pill">Currently: Platform / Reliability / Observability</span>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content">
+      <section class="section">
+        <div class="container prose reveal">
+          <p class="section-eyebrow">Case Study 01</p>
+          <h1>Tagging as Context Fabric for AI-Enabled Observability</h1>
+          <p class="callout">
+            Role: Platform Engineering Leadership<br />
+            Scope: Enterprise-scale reliability and observability foundations<br />
+            Focus: telemetry standards, cognitive load reduction, and incident response acceleration
+          </p>
+
+          <h2>Context</h2>
+          <p>
+            Platform teams were supporting high-scale systems across multiple domains with inconsistent tagging,
+            naming, and ownership metadata. Signals existed, but they were fragmented across dashboards and alerts,
+            making incident triage slower than necessary.
+          </p>
+
+          <h2>Problem</h2>
+          <p>
+            Without a stable metadata model, queries were brittle, cross-team debugging was noisy, and operational
+            context could not be reused consistently. AI-assisted workflows were limited because context quality was
+            inconsistent.
+          </p>
+
+          <h2>Approach</h2>
+          <ul>
+            <li>Defined a shared tagging taxonomy across service, domain, owner, environment, and region.</li>
+            <li>Standardized naming conventions and ownership rules in CI/CD and deployment workflows.</li>
+            <li>Paired instrumentation standards with role-based dashboard templates and runbook links.</li>
+            <li>Expanded observability access so incident response could involve broader engineering participation.</li>
+          </ul>
+
+          <h2>Outcomes</h2>
+          <ul>
+            <li><strong>99.99% uptime</strong> highlighted in public Datadog customer materials.</li>
+            <li><strong>55% faster onboarding</strong> publicly referenced in customer story outcomes.</li>
+            <li>Decreased MTTD/MTTR trend through improved visibility and shared troubleshooting context.</li>
+          </ul>
+
+          <h2>What I'd Do Differently</h2>
+          <p>
+            I would push earlier on automatic metadata validation at PR time for every service boundary, reducing manual
+            exceptions and forcing consistent adoption earlier in the rollout lifecycle.
+          </p>
+
+          <h2>Artifacts</h2>
+          <ul>
+            <li>Tag taxonomy diagram: service / domain / owner / env / region</li>
+            <li>Before/after dashboard snapshots showing query simplification</li>
+            <li>Incident timeline showing MTTD-to-recovery workflow standardization</li>
+          </ul>
+
+          <p>
+            Public references:
+            <a href="https://www.datadoghq.com/customer-testimonial/uber-freight/" target="_blank" rel="noreferrer">Datadog Customer Story</a>,
+            <a href="https://events.datadoghq.com/summits/datadog-summit-san-francisco/agenda/keynote" target="_blank" rel="noreferrer">Datadog Summit Keynote</a>.
+          </p>
+
+          <p>
+            <a class="button secondary" href="projects.html">Back to Projects</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p class="small">(c) <span data-year></span> Thiyagarajan Anandan. Built for operational clarity.</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/anandant" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="mailto:thiyagamcitp@gmail.com">thiyagamcitp@gmail.com</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

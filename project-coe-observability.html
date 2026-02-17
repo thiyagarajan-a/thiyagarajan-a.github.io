@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case Study | Observability Center of Excellence</title>
+    <meta
+      name="description"
+      content="Case study: designing a monitoring and DevOps center-of-excellence operating model for sustained platform reliability adoption."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Sora:wght@500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script defer src="scripts/main.js"></script>
+  </head>
+  <body data-page="projects">
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">TA</span>
+          <span class="brand-text">Anand Ant</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+        <nav id="site-nav" class="primary-nav" aria-label="Primary">
+          <a class="nav-link" data-page="home" href="index.html">Home</a>
+          <a class="nav-link" data-page="about" href="about.html">About</a>
+          <a class="nav-link" data-page="projects" href="projects.html">Projects</a>
+          <a class="nav-link" data-page="blog" href="blog.html">Blog</a>
+          <a class="nav-link" data-page="resume" href="resume.html">Resume</a>
+          <a class="nav-link" data-page="contact" href="contact.html">Contact</a>
+          <span class="now-pill">Currently: Platform / Reliability / Observability</span>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content">
+      <section class="section">
+        <div class="container prose reveal">
+          <p class="section-eyebrow">Case Study 03</p>
+          <h1>Building an Observability Center of Excellence</h1>
+          <p class="callout">
+            Role: Platform Engineering Leadership<br />
+            Scope: cross-functional DevOps and reliability enablement<br />
+            Focus: process design, platform adoption, and repeatable execution
+          </p>
+
+          <h2>Context</h2>
+          <p>
+            Teams needed consistent support for instrumentation, alerting quality, and operational readiness. Existing
+            patterns were fragmented and often depended on a small set of experts.
+          </p>
+
+          <h2>Problem</h2>
+          <p>
+            Reliability improvements were difficult to scale because each team solved observability differently. This
+            created uneven incident quality, duplicated effort, and high cognitive overhead for both product and
+            platform engineers.
+          </p>
+
+          <h2>Approach</h2>
+          <ul>
+            <li>Defined a COE operating model: intake, standards governance, enablement, and platform roadmap.</li>
+            <li>Built a golden path workflow: instrument "†’ tag "†’ dashboard "†’ alert "†’ runbook.</li>
+            <li>Created reusable templates and review checkpoints for new services and major changes.</li>
+            <li>Established team-level accountability loops with shared reliability KPIs.</li>
+          </ul>
+
+          <h2>Outcomes</h2>
+          <ul>
+            <li>Higher consistency in telemetry quality and alerting behavior across teams.</li>
+            <li>Faster onboarding into production-ready observability practices.</li>
+            <li>Reduced reliance on ad-hoc support from central experts.</li>
+          </ul>
+
+          <h2>What I'd Do Differently</h2>
+          <p>
+            I would pair each enablement stream with explicit adoption SLOs from the first quarter to quantify impact
+            and make tradeoffs between platform backlog and team-specific support more transparent.
+          </p>
+
+          <h2>Artifacts</h2>
+          <ul>
+            <li>COE operating model map and governance cadence</li>
+            <li>Golden-path checklist and service launch rubric</li>
+            <li>Standardized runbook template with ownership metadata</li>
+          </ul>
+
+          <p>
+            Public reference:
+            <a href="https://opsmatters.com/videos/how-uber-freight-powers-intelligent-logistics-datadog" target="_blank" rel="noreferrer">Uber Freight + Datadog Session Listing</a>.
+          </p>
+
+          <p>
+            <a class="button secondary" href="projects.html">Back to Projects</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p class="small">(c) <span data-year></span> Thiyagarajan Anandan. Built for operational clarity.</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/anandant" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="mailto:thiyagamcitp@gmail.com">thiyagamcitp@gmail.com</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

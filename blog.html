@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog | Anand Ant</title>
+    <meta
+      name="description"
+      content="Writing on observability strategy, reliability engineering leadership, and platform architecture during growth and M&amp;A."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Sora:wght@500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script defer src="scripts/main.js"></script>
+  </head>
+  <body data-page="blog">
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">TA</span>
+          <span class="brand-text">Anand Ant</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+        <nav id="site-nav" class="primary-nav" aria-label="Primary">
+          <a class="nav-link" data-page="home" href="index.html">Home</a>
+          <a class="nav-link" data-page="about" href="about.html">About</a>
+          <a class="nav-link" data-page="projects" href="projects.html">Projects</a>
+          <a class="nav-link" data-page="blog" href="blog.html">Blog</a>
+          <a class="nav-link" data-page="resume" href="resume.html">Resume</a>
+          <a class="nav-link" data-page="contact" href="contact.html">Contact</a>
+          <span class="now-pill">Currently: Platform / Reliability / Observability</span>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content">
+      <section class="section">
+        <div class="container reveal">
+          <p class="section-eyebrow">Blog</p>
+          <h1 class="section-title">Notes from platform engineering at scale</h1>
+          <p class="lead">
+            These posts translate recurring themes from speaking sessions and real platform programs into practical
+            playbooks that engineering leaders can apply quickly.
+          </p>
+        </div>
+      </section>
+
+      <section class="section section-tight">
+        <div class="container card-grid">
+          <article class="card reveal">
+            <div class="tag-row">
+              <span class="tag">Observability</span>
+              <span class="tag">AI</span>
+            </div>
+            <h2 class="section-title" style="font-size: 1.25rem; margin: 0">Tagging Standards That Make AI-Assisted Troubleshooting Work</h2>
+            <p>How metadata discipline creates the foundation for fast, trustworthy incident investigation.</p>
+            <a class="button secondary" href="blog-tagging-context.html">Read Article</a>
+          </article>
+
+          <article class="card reveal">
+            <div class="tag-row">
+              <span class="tag">M&amp;A</span>
+              <span class="tag">Monitoring</span>
+            </div>
+            <h2 class="section-title" style="font-size: 1.25rem; margin: 0">Monitoring Strategy During M&amp;A: Reducing Risk When Stacks Collide</h2>
+            <p>A practical framework for consolidating monitoring systems while protecting reliability.</p>
+            <a class="button secondary" href="blog-monitoring-ma.html">Read Article</a>
+          </article>
+
+          <article class="card reveal">
+            <div class="tag-row">
+              <span class="tag">Operating Model</span>
+              <span class="tag">COE</span>
+            </div>
+            <h2 class="section-title" style="font-size: 1.25rem; margin: 0">From Dashboards to Decisions: Building an Observability COE</h2>
+            <p>Designing an enablement model that scales standards, ownership, and system quality.</p>
+            <a class="button secondary" href="blog-coe-observability.html">Read Article</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p class="small">(c) <span data-year></span> Thiyagarajan Anandan. Built for operational clarity.</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/anandant" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="mailto:thiyagamcitp@gmail.com">thiyagamcitp@gmail.com</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

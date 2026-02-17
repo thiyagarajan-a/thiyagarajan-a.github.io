@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tagging Standards That Make AI-Assisted Troubleshooting Work</title>
+    <meta
+      name="description"
+      content="Why disciplined telemetry metadata is required for AI-assisted troubleshooting and reliable operational decision-making."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Sora:wght@500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script defer src="scripts/main.js"></script>
+  </head>
+  <body data-page="blog">
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">TA</span>
+          <span class="brand-text">Anand Ant</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+        <nav id="site-nav" class="primary-nav" aria-label="Primary">
+          <a class="nav-link" data-page="home" href="index.html">Home</a>
+          <a class="nav-link" data-page="about" href="about.html">About</a>
+          <a class="nav-link" data-page="projects" href="projects.html">Projects</a>
+          <a class="nav-link" data-page="blog" href="blog.html">Blog</a>
+          <a class="nav-link" data-page="resume" href="resume.html">Resume</a>
+          <a class="nav-link" data-page="contact" href="contact.html">Contact</a>
+          <span class="now-pill">Currently: Platform / Reliability / Observability</span>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content">
+      <section class="section">
+        <div class="container prose reveal">
+          <p class="section-eyebrow">Observability  |  AI</p>
+          <h1>Tagging Standards That Make AI-Assisted Troubleshooting Work</h1>
+          <p class="small">Published: February 2026</p>
+
+          <p>
+            AI can speed up debugging, but only when telemetry has consistent context. Without disciplined metadata,
+            assistance tools amplify noise instead of reducing it. The fastest path to useful AI in reliability is not a
+            new model. It is better data contracts.
+          </p>
+
+          <h2>What breaks first without standards</h2>
+          <ul>
+            <li>Cross-service queries return partial or misleading results.</li>
+            <li>Incident responders lose time translating naming differences.</li>
+            <li>Ownership becomes unclear during high-pressure escalation.</li>
+            <li>Automated pattern detection cannot compare like-for-like entities.</li>
+          </ul>
+
+          <h2>Minimum viable metadata model</h2>
+          <p>At a minimum, every service signal should carry:</p>
+          <ul>
+            <li><strong>service</strong>: stable service identifier</li>
+            <li><strong>domain</strong>: business or platform area</li>
+            <li><strong>owner</strong>: accountable team</li>
+            <li><strong>environment</strong>: prod, staging, etc.</li>
+            <li><strong>region</strong>: geography or cluster location</li>
+          </ul>
+
+          <h2>Rollout strategy that avoids backlash</h2>
+          <ol>
+            <li>Start with top incident-driving services and make wins visible.</li>
+            <li>Provide dashboard/runbook templates so standards produce immediate value.</li>
+            <li>Enforce new fields in CI for net-new services, then backfill legacy services in waves.</li>
+            <li>Track adoption with one scorecard: coverage, compliance, and query success rate.</li>
+          </ol>
+
+          <h2>Expected outcomes</h2>
+          <p>
+            In practice, this approach improves incident triage speed, reduces context switching, and increases
+            confidence in AI-assisted investigations. Teams spend less time deciphering telemetry and more time fixing
+            systems.
+          </p>
+
+          <p>
+            <a class="button secondary" href="blog.html">Back to Blog</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p class="small">(c) <span data-year></span> Thiyagarajan Anandan. Built for operational clarity.</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/anandant" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="mailto:thiyagamcitp@gmail.com">thiyagamcitp@gmail.com</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
