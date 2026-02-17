@@ -247,6 +247,8 @@ main {
   border: 2px solid rgba(216, 90, 43, 0.22);
   margin: 0 auto 0.95rem;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.11);
+  filter: grayscale(100%);
+  background: #c5c5c5;
 }
 
 .hero-card h2 {
@@ -470,6 +472,8 @@ main {
   object-fit: cover;
   object-position: center 26%;
   border: 1px solid var(--line);
+  filter: grayscale(100%);
+  background: #c5c5c5;
 }
 
 .timeline {
