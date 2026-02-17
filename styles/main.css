@@ -1,34 +1,34 @@
 :root {
-  --bg: #0b0d14;
-  --bg-2: radial-gradient(circle at 10% 18%, rgba(90, 231, 207, 0.12), transparent 35%),
-    radial-gradient(circle at 82% 12%, rgba(93, 142, 255, 0.16), transparent 34%),
-    radial-gradient(circle at 68% 80%, rgba(255, 255, 255, 0.04), transparent 40%),
-    #0b0d14;
-  --surface: rgba(17, 20, 30, 0.9);
-  --surface-strong: rgba(22, 26, 38, 0.95);
-  --ink: #f5f7fb;
-  --muted: #a7b2c9;
-  --accent: #7fffd4;
-  --accent-2: #7cb7ff;
-  --accent-soft: rgba(127, 255, 212, 0.18);
+  --bg: #0b0c10;
+  --bg-2: radial-gradient(circle at 12% 16%, rgba(94, 234, 212, 0.12), transparent 34%),
+    radial-gradient(circle at 78% 18%, rgba(114, 145, 255, 0.12), transparent 32%),
+    radial-gradient(circle at 64% 78%, rgba(255, 255, 255, 0.04), transparent 40%),
+    #0b0c10;
+  --surface: rgba(16, 18, 26, 0.92);
+  --surface-strong: rgba(22, 25, 34, 0.96);
+  --ink: #f5f6fb;
+  --muted: #a3adc4;
+  --accent: #7ce8c8;
+  --accent-2: #9fb2ff;
+  --accent-soft: rgba(124, 232, 200, 0.18);
   --line: rgba(255, 255, 255, 0.08);
   --ok: #8fffc5;
   --radius-sm: 12px;
   --radius-md: 18px;
   --radius-lg: 26px;
-  --shadow: 0 12px 38px rgba(0, 0, 0, 0.32);
+  --shadow: 0 14px 44px rgba(0, 0, 0, 0.32);
   --container: 1180px;
   --grid: repeating-linear-gradient(
       to right,
-      rgba(255, 255, 255, 0.03) 0,
-      rgba(255, 255, 255, 0.03) 1px,
+      rgba(255, 255, 255, 0.025) 0,
+      rgba(255, 255, 255, 0.025) 1px,
       transparent 1px,
       transparent 72px
     ),
     repeating-linear-gradient(
       to bottom,
-      rgba(255, 255, 255, 0.03) 0,
-      rgba(255, 255, 255, 0.03) 1px,
+      rgba(255, 255, 255, 0.025) 0,
+      rgba(255, 255, 255, 0.025) 1px,
       transparent 1px,
       transparent 72px
     );
@@ -116,12 +116,12 @@ img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: radial-gradient(circle at 32% 32%, #ffffff, #7fffd4 40%, #0b0d14 70%);
-  color: #0b0d14;
+  background: radial-gradient(circle at 32% 32%, #ffffff, #7ce8c8 42%, #0b0c10 72%);
+  color: #0b0c10;
   font-family: "Sora", sans-serif;
   font-size: 0.9rem;
   letter-spacing: 0.08em;
-  box-shadow: 0 0 0 1px rgba(102, 228, 255, 0.4), 0 12px 30px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 0 1px rgba(124, 232, 200, 0.36), 0 12px 30px rgba(0, 0, 0, 0.35);
 }
 
 .brand-text {
