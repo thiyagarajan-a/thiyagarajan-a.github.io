@@ -238,6 +238,17 @@ main {
   box-shadow: var(--shadow);
 }
 
+.hero-photo {
+  width: min(100%, 300px);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center 28%;
+  border-radius: 50%;
+  border: 2px solid rgba(216, 90, 43, 0.22);
+  margin: 0 auto 0.95rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.11);
+}
+
 .hero-card h2 {
   margin: 0;
   font-size: 1rem;
@@ -439,6 +450,26 @@ main {
   margin-bottom: 0.75rem;
   border-left: 3px solid var(--accent-soft);
   padding-left: 0.65rem;
+}
+
+.signal-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.8rem;
+}
+
+.signal-header h2 {
+  margin: 0;
+}
+
+.signal-photo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 26%;
+  border: 1px solid var(--line);
 }
 
 .timeline {
@@ -665,6 +696,10 @@ a:focus-visible {
   .kpi-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .hero-photo {
+    width: min(100%, 240px);
+  }
 }
 
 @media (max-width: 760px) {
@@ -696,5 +731,14 @@ a:focus-visible {
   .card-grid,
   .kpi-grid {
     grid-template-columns: 1fr;
+  }
+
+  .signal-header {
+    align-items: flex-start;
+  }
+
+  .signal-photo {
+    width: 56px;
+    height: 56px;
   }
 }
