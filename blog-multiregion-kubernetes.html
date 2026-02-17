@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Designing Multi-Region Kubernetes Platforms Without Operational Drift</title>
+    <meta
+      name="description"
+      content="A detailed platform engineering guide for multi-region Kubernetes design, global traffic strategy, and failover operations."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Sora:wght@500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script defer src="scripts/main.js"></script>
+  </head>
+  <body data-page="blog">
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">TA</span>
+          <span class="brand-text">Theo ( Thiyagarajan Anandan )</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+        <nav id="site-nav" class="primary-nav" aria-label="Primary">
+          <a class="nav-link" data-page="home" href="index.html">Home</a>
+          <a class="nav-link" data-page="about" href="about.html">About</a>
+          <a class="nav-link" data-page="projects" href="projects.html">Projects</a>
+          <a class="nav-link" data-page="blog" href="blog.html">Blog</a>
+          <a class="nav-link" data-page="resume" href="resume.html">Resume</a>
+          <a class="nav-link" data-page="contact" href="contact.html">Contact</a>
+          <span class="now-pill">Currently: Platform / Reliability / Observability</span>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content">
+      <section class="section">
+        <div class="container prose reveal">
+          <p class="section-eyebrow">Kubernetes | Multi-Region | Traffic</p>
+          <h1>Designing Multi-Region Kubernetes Platforms Without Operational Drift</h1>
+          <p class="small">Published: February 2026</p>
+
+          <p>
+            Running Kubernetes in multiple regions is easy to start and hard to keep healthy. The initial architecture
+            usually looks clean. Drift appears later: region-specific patches, inconsistent policies, different release
+            velocity, and failover behavior that has never been tested under pressure.
+          </p>
+
+          <p>
+            The goal is not just regional presence. The goal is predictable global behavior with local resilience. This
+            requires architecture choices and operating discipline to be designed together.
+          </p>
+
+          <h2>Core design principle: symmetry where possible, intentional asymmetry where necessary</h2>
+          <p>
+            Most services should run on symmetric region patterns: same baseline cluster policies, same observability
+            schema, same deployment guardrails. Asymmetry should be explicit and documented, usually for data gravity,
+            legal constraints, or cost controls.
+          </p>
+
+          <h2>Reference control layers</h2>
+          <ul>
+            <li><strong>Global traffic layer:</strong> DNS and load balancing strategy for ingress routing</li>
+            <li><strong>Regional execution layer:</strong> cluster policies, autoscaling, and node pools</li>
+            <li><strong>Service policy layer:</strong> deployment templates, runtime limits, and service ownership metadata</li>
+            <li><strong>Reliability layer:</strong> SLOs, runbooks, and failover procedures</li>
+          </ul>
+
+          <p>
+            Treat each layer as a product boundary. This prevents one team from hardcoding cross-layer assumptions that
+            break later during incidents.
+          </p>
+
+          <h2>Traffic strategy choices</h2>
+          <p>For most internet-scale workloads, combine:</p>
+          <ul>
+            <li>Latency-aware routing for normal operations</li>
+            <li>Health-based failover for regional impairment scenarios</li>
+            <li>Explicit traffic shift controls for planned releases and rollback</li>
+          </ul>
+
+          <p>
+            The most common failure mode is assuming DNS failover is enough. It helps, but service-level readiness,
+            data dependencies, and cache warmup often decide whether failover actually works.
+          </p>
+
+          <h2>Release strategy for global clusters</h2>
+          <ol>
+            <li>Canary within one region and one service slice</li>
+            <li>Expand to full region after objective health checks</li>
+            <li>Roll to second region after stability threshold</li>
+            <li>Complete global rollout with region-level rollback points</li>
+          </ol>
+
+          <p>
+            This pattern reduces blast radius while maintaining predictable delivery velocity.
+          </p>
+
+          <h2>Failover readiness is an operations practice, not a document</h2>
+          <p>
+            Failover plans are useful only if rehearsed. Run regular scenarios:
+          </p>
+          <ul>
+            <li>Control plane degradation in one region</li>
+            <li>Network partition affecting inter-region dependencies</li>
+            <li>Data-path latency spike crossing SLO thresholds</li>
+            <li>Ingress saturation and traffic rebalance behavior</li>
+          </ul>
+
+          <p>
+            Record remediation timings and update runbooks based on what actually happened, not what was expected.
+          </p>
+
+          <h2>Guardrails that prevent drift</h2>
+          <ul>
+            <li>Policy-as-code with versioned review gates</li>
+            <li>Standardized cluster baseline templates</li>
+            <li>Automated conformance checks across regions</li>
+            <li>Region drift dashboards visible to platform and service owners</li>
+          </ul>
+
+          <h2>Cost and reliability tradeoffs</h2>
+          <p>
+            Global resilience has cost overhead. The wrong optimization is reducing redundancy blindly. The better
+            approach is tiered service strategy: critical services with higher redundancy, lower-tier services with
+            constrained cross-region capacity and slower recovery objectives.
+          </p>
+
+          <h2>Closing note</h2>
+          <p>
+            Multi-region Kubernetes success depends less on cluster count and more on operating consistency. Symmetry,
+            tested failover, clear ownership, and enforcement automation are what keep global platforms stable over time.
+          </p>
+
+          <p>
+            <a class="button secondary" href="blog.html">Back to Blog</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p class="small">(c) <span data-year></span> Thiyagarajan Anandan. Built for operational clarity.</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/anandant" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="mailto:thiyagamcitp@gmail.com">thiyagamcitp@gmail.com</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

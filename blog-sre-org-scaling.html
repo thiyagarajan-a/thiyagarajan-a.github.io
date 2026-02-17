@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scaling SRE Organizations: From Heroics to Repeatable Systems</title>
+    <meta
+      name="description"
+      content="A detailed guide to scaling SRE organizations, improving on-call quality, and building sustainable reliability culture."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Sora:wght@500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script defer src="scripts/main.js"></script>
+  </head>
+  <body data-page="blog">
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">TA</span>
+          <span class="brand-text">Theo ( Thiyagarajan Anandan )</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+        <nav id="site-nav" class="primary-nav" aria-label="Primary">
+          <a class="nav-link" data-page="home" href="index.html">Home</a>
+          <a class="nav-link" data-page="about" href="about.html">About</a>
+          <a class="nav-link" data-page="projects" href="projects.html">Projects</a>
+          <a class="nav-link" data-page="blog" href="blog.html">Blog</a>
+          <a class="nav-link" data-page="resume" href="resume.html">Resume</a>
+          <a class="nav-link" data-page="contact" href="contact.html">Contact</a>
+          <span class="now-pill">Currently: Platform / Reliability / Observability</span>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content">
+      <section class="section">
+        <div class="container prose reveal">
+          <p class="section-eyebrow">Leadership | SRE | Organizational Design</p>
+          <h1>Scaling SRE Organizations: From Heroics to Repeatable Systems</h1>
+          <p class="small">Published: February 2026</p>
+
+          <p>
+            SRE teams often start as a few high-skill engineers absorbing reliability pain for everyone else. That model
+            can stabilize early growth, but it does not scale. As service count and team count grow, heroic response
+            patterns create burnout, incident inconsistency, and delivery friction.
+          </p>
+
+          <p>
+            Scaling SRE is less about headcount and more about system design: team topology, service ownership, on-call
+            quality, and reliability governance.
+          </p>
+
+          <h2>How to know your SRE model is failing</h2>
+          <ul>
+            <li>On-call effort concentrated on a few engineers</li>
+            <li>Repeated incidents without structural follow-through</li>
+            <li>Product teams treating SRE as a ticket destination</li>
+            <li>Alert volume increasing faster than service growth</li>
+            <li>Postmortems producing actions that never land</li>
+          </ul>
+
+          <h2>Define SRE engagement modes</h2>
+          <p>
+            Every scaled SRE org should run clear engagement models. Typical modes:
+          </p>
+          <ol>
+            <li><strong>Embedded mode:</strong> short-term focus for critical launches and risky migrations</li>
+            <li><strong>Consultative mode:</strong> standards and reviews for most product teams</li>
+            <li><strong>Platform mode:</strong> central ownership for shared reliability tooling and controls</li>
+          </ol>
+
+          <p>
+            Without explicit modes, SRE defaults to ad-hoc support and cannot protect long-term engineering quality.
+          </p>
+
+          <h2>On-call quality as a first-class product</h2>
+          <p>
+            On-call is where reliability strategy is tested in reality. Improve it systematically:
+          </p>
+          <ul>
+            <li>Set error-budget-aware paging thresholds</li>
+            <li>Enforce ownership on all production alerts</li>
+            <li>Track noisy alert sources and resolve by design, not suppression</li>
+            <li>Measure responder load and recovery time per service tier</li>
+          </ul>
+
+          <h2>SLO program design that teams can operate</h2>
+          <p>
+            Avoid top-down SLO catalogs that no one uses. Build a lightweight process:
+          </p>
+          <ul>
+            <li>Start with tier-0 and tier-1 services</li>
+            <li>Tie indicators directly to customer impact</li>
+            <li>Use SLO reviews in roadmap and release decisions</li>
+            <li>Require explicit risk acceptance when error budgets are exhausted</li>
+          </ul>
+
+          <h2>Incident management maturity model</h2>
+          <p>Move teams through three stages:</p>
+          <ol>
+            <li><strong>Reactive:</strong> manual triage, uneven ownership</li>
+            <li><strong>Controlled:</strong> clear incident roles, runbooks, postmortems with follow-through</li>
+            <li><strong>Proactive:</strong> trend detection, preventive work tied to reliability metrics</li>
+          </ol>
+
+          <p>
+            Promotion across stages should be evidence-based, not self-reported.
+          </p>
+
+          <h2>Leadership routines that make reliability culture durable</h2>
+          <ul>
+            <li>Weekly reliability review with product and platform leaders</li>
+            <li>Monthly service health scorecards by domain</li>
+            <li>Quarterly reliability investment planning linked to delivery goals</li>
+            <li>Transparent escalation for unresolved reliability debt</li>
+          </ul>
+
+          <h2>Building managers inside SRE and platform teams</h2>
+          <p>
+            As organizations scale, manager quality becomes a reliability variable. Develop managers who can coach
+            technical depth, make risk tradeoffs explicit, and align reliability work with business delivery.
+          </p>
+
+          <h2>Closing note</h2>
+          <p>
+            Sustainable reliability is an organizational capability, not a small-team trait. If you want durable uptime,
+            predictable incident response, and healthier engineering pace, design SRE as a repeatable system rather than
+            a hero function.
+          </p>
+
+          <p>
+            <a class="button secondary" href="blog.html">Back to Blog</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p class="small">(c) <span data-year></span> Thiyagarajan Anandan. Built for operational clarity.</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/anandant" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="mailto:thiyagamcitp@gmail.com">thiyagamcitp@gmail.com</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
