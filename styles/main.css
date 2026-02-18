@@ -255,7 +255,8 @@ main {
 }
 
 .hero-photo {
-  width: min(100%, 300px);
+  width: 180px;
+  height: 180px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: center 28%;
@@ -263,8 +264,8 @@ main {
   border: 2px solid rgba(255, 255, 255, 0.12);
   margin: 0 auto 0.95rem;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.11);
-  filter: none;
-  background: transparent;
+  filter: grayscale(100%);
+  background: #c9c9c9;
   mix-blend-mode: normal;
 }
 
@@ -766,7 +767,8 @@ a:focus-visible {
   }
 
   .hero-photo {
-    width: min(100%, 240px);
+    width: 160px;
+    height: 160px;
   }
 }
 
@@ -808,5 +810,6 @@ a:focus-visible {
   .signal-photo {
     width: 56px;
     height: 56px;
+    filter: grayscale(100%);
   }
 }
