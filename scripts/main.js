@@ -12,6 +12,7 @@
 
   const navToggle = document.querySelector(".nav-toggle");
   const nav = document.querySelector(".primary-nav");
+  const header = document.querySelector(".site-header");
   if (navToggle && nav) {
     navToggle.addEventListener("click", function () {
       const isOpen = nav.classList.toggle("open");
@@ -46,6 +47,58 @@
     });
   } else {
     revealItems.forEach((item) => item.classList.add("visible"));
+  }
+
+  if (header) {
+    const updateHeader = () => {
+      if (window.scrollY > 28) {
+        header.classList.add("compact");
+      } else {
+        header.classList.remove("compact");
+      }
+    };
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
+  }
+
+  const counters = document.querySelectorAll("[data-count]");
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (counters.length > 0) {
+    const runCounter = (el) => {
+      const target = Number(el.getAttribute("data-count"));
+      const suffix = el.getAttribute("data-suffix") || "";
+      if (!Number.isFinite(target)) return;
+      if (prefersReducedMotion) {
+        el.textContent = `${target}${suffix}`;
+        return;
+      }
+      const start = performance.now();
+      const duration = 900;
+      const step = (now) => {
+        const p = Math.min((now - start) / duration, 1);
+        const value = Math.floor(target * p);
+        el.textContent = `${value}${suffix}`;
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+
+    if ("IntersectionObserver" in window) {
+      const counterObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              runCounter(entry.target);
+              counterObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.45 }
+      );
+      counters.forEach((c) => counterObserver.observe(c));
+    } else {
+      counters.forEach((c) => runCounter(c));
+    }
   }
 
   const yearNode = document.querySelector("[data-year]");

@@ -23,8 +23,8 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Sora:wght@500;600;700;800&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles/main.css?v=20260219" />
-    <script defer src="scripts/main.js?v=20260219"></script>
+    <link rel="stylesheet" href="styles/main.css?v=20260220" />
+    <script defer src="scripts/main.js?v=20260220"></script>
   </head>
   <body data-page="home">
     <a class="skip-link" href="#content">Skip to content</a>
@@ -102,19 +102,59 @@
 
       <section class="section section-tight">
         <div class="container reveal">
-          <p class="section-eyebrow">Publicly Supported Outcomes</p>
-          <div class="kpi-grid">
-            <article class="kpi-card">
-              <p class="kpi-value">99.99%</p>
-              <p class="kpi-label">Uptime highlighted in Datadog customer story</p>
+          <p class="section-eyebrow">What I Drive</p>
+          <h2 class="section-title">Platform leadership focused on scale, clarity, and execution</h2>
+          <div class="expand-list">
+            <details class="expand-item">
+              <summary>Platform Reliability at Executive Scale</summary>
+              <p>Operating models that connect SLOs, incident quality, and business risk posture across teams.</p>
+            </details>
+            <details class="expand-item">
+              <summary>Organizational Growth and Engineering Enablement</summary>
+              <p>Team topology, coaching systems, and standardization that reduce heroics and sustain delivery velocity.</p>
+            </details>
+            <details class="expand-item">
+              <summary>Cloud and Infrastructure Transformation</summary>
+              <p>M&amp;A consolidation, Kubernetes modernization, and observability control planes built for continuity.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <p class="section-eyebrow">Outcomes</p>
+          <h2 class="section-title">Operational metrics translated to business outcomes</h2>
+          <div class="infographic reveal" aria-label="Org growth timeline">
+            <p class="small">OrgGrowthTimeline</p>
+            <div class="metric-row">
+              <div><span data-count="50" data-suffix="+">0+</span> engineers influenced across platform and reliability programs</div>
+              <div><span data-count="3" data-suffix="x">0x</span> faster operational onboarding in standardized domains</div>
+              <div><span data-count="99" data-suffix=".99%">0.99%</span> reliability benchmark sustained in public references</div>
+            </div>
+          </div>
+          <div class="infographic reveal" aria-label="Reliability signal">
+            <p class="small">ReliabilitySignal</p>
+            <svg viewBox="0 0 640 110" role="img">
+              <rect x="0" y="0" width="640" height="110" rx="12" fill="rgba(255,255,255,0.02)"></rect>
+              <rect x="36" y="72" width="74" height="20" rx="4" fill="#345d54"></rect>
+              <rect x="128" y="58" width="74" height="34" rx="4" fill="#3a7a6b"></rect>
+              <rect x="220" y="46" width="74" height="46" rx="4" fill="#2f8a74"></rect>
+              <rect x="312" y="34" width="74" height="58" rx="4" fill="#26a37f"></rect>
+              <rect x="404" y="26" width="74" height="66" rx="4" fill="#1fb38a"></rect>
+              <rect x="496" y="18" width="74" height="74" rx="4" fill="#16c496"></rect>
+            </svg>
+          </div>
+          <div class="card-grid">
+            <article class="card reveal">
+              <h3>OutcomePanel: Incident MTTR reduction</h3>
+              <p>Operational improvement: standardized telemetry ownership and runbook-linked alerting.</p>
+              <p>Business translation: less revenue-risk exposure during peak windows and fewer executive escalations.</p>
             </article>
-            <article class="kpi-card">
-              <p class="kpi-value">55%</p>
-              <p class="kpi-label">Faster onboarding reported in public testimonial highlights</p>
-            </article>
-            <article class="kpi-card">
-              <p class="kpi-value">MTTR down</p>
-              <p class="kpi-label">Reduced MTTD/MTTR through broader visibility and access</p>
+            <article class="card reveal">
+              <h3>OutcomePanel: Faster engineering onboarding</h3>
+              <p>Operational improvement: shared metadata model and reproducible platform guardrails.</p>
+              <p>Business translation: faster feature throughput with lower dependency on central platform teams.</p>
             </article>
           </div>
         </div>
@@ -122,7 +162,7 @@
 
       <section class="section">
         <div class="container">
-          <p class="section-eyebrow">Featured Case Studies</p>
+          <p class="section-eyebrow">Case Studies</p>
           <h2 class="section-title">Where platform strategy meets measurable reliability</h2>
           <div class="card-grid">
             <article class="card reveal">
@@ -175,40 +215,39 @@
 
       <section class="section section-tight">
         <div class="container">
-          <p class="section-eyebrow">Portfolio Footprint</p>
-          <h2 class="section-title">Portfolio, public appearances, and leadership writing</h2>
-          <div class="card-grid">
-            <article class="card reveal">
-              <h3>Portfolio</h3>
-              <p>Case studies on platform modernization, observability standards, and M&amp;A infrastructure convergence.</p>
-              <ul class="metric-list">
-                <li>Tagging as context fabric</li>
-                <li>Monitoring strategy during consolidation</li>
-                <li>Observability COE operating model</li>
-              </ul>
-              <a class="button secondary" href="projects.html">Explore Projects</a>
-            </article>
-            <article class="card reveal">
-              <h3>Public Appearances</h3>
-              <p>Talks and community sessions focused on cognitive load, AI-enabled reliability, and platform operations.</p>
-              <ul class="metric-list">
-                <li>Datadog Summit SF keynote (2025)</li>
-                <li>NADOG sessions (2023, 2024)</li>
-                <li>Customer advisory and field enablement</li>
-              </ul>
-              <a class="button secondary" href="https://www.youtube.com/watch?v=4Ck_5t1XZYs" target="_blank" rel="noreferrer">Watch Summit Talk</a>
-            </article>
-            <article class="card reveal">
-              <h3>Blogs</h3>
-              <p>Long-form engineering leadership writing on AI infra standards, cloud migration, and large-scale SRE.</p>
-              <ul class="metric-list">
-                <li>AI infrastructure management standards</li>
-                <li>Datadog as a single-pane control plane</li>
-                <li>Large-scale Kubernetes and incident response</li>
-              </ul>
-              <a class="button secondary" href="blog.html">Read Blogs</a>
-            </article>
+          <p class="section-eyebrow">Writing</p>
+          <h2 class="section-title">Latest writing for platform and engineering leadership</h2>
+          <ul class="list-clean reveal">
+            <li><a href="blog-cognitive-load-incident-response.html">Winning the First Five Minutes: Reducing Cognitive Load in Incident Response</a></li>
+            <li><a href="blog-ai-infra-standards.html">AI Infrastructure Management Standards: Control Planes, Policy, and Reliability</a></li>
+            <li><a href="blog-datadog-single-pane.html">Datadog as a Single Pane of Observability: Consolidation Without Blind Spots</a></li>
+            <li><a href="blog-k8s-large-scale-management.html">Large-Scale Kubernetes Management: Fleet Operations, Upgrades, and Reliability</a></li>
+          </ul>
+          <p><a class="button secondary" href="blog.html">Open All Writing</a></p>
+        </div>
+      </section>
+
+      <section class="section section-tight">
+        <div class="container">
+          <p class="section-eyebrow">Public Appearances</p>
+          <h2 class="section-title">Executive-facing communication and external platform leadership</h2>
+          <div class="infographic reveal" aria-label="Architecture flow">
+            <p class="small">ArchitectureFlow</p>
+            <svg viewBox="0 0 640 120" role="img">
+              <rect x="24" y="32" width="130" height="52" rx="8" fill="#223038"></rect>
+              <rect x="254" y="32" width="130" height="52" rx="8" fill="#223038"></rect>
+              <rect x="484" y="32" width="130" height="52" rx="8" fill="#223038"></rect>
+              <path d="M154 58H248" stroke="#6ea99a" stroke-width="2"></path>
+              <path d="M384 58H478" stroke="#6ea99a" stroke-width="2"></path>
+              <text x="50" y="62" fill="#dce4df" font-size="14">Signals</text>
+              <text x="285" y="62" fill="#dce4df" font-size="14">Insights</text>
+              <text x="513" y="62" fill="#dce4df" font-size="14">Decisions</text>
+            </svg>
           </div>
+          <ul class="list-clean reveal">
+            <li><a href="https://www.youtube.com/watch?v=4Ck_5t1XZYs" target="_blank" rel="noreferrer">Datadog Summit SF (2025): cognitive load and AI-enabled reliability</a></li>
+            <li><a href="https://luma.com/5puhmxjn" target="_blank" rel="noreferrer">NADOG Boston: enterprise monitoring through M&amp;A complexity</a></li>
+          </ul>
         </div>
       </section>
     </main>
