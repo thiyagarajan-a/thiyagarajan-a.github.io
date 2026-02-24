@@ -189,11 +189,18 @@ function CommandPaletteFooter() {
 
   const executeCommand = () => {
     const normalized = command.trim().toLowerCase();
-    if (normalized === "linkedin") {
+    if (!normalized) return;
+
+    const token = normalized
+      .replace(/^\$/, "")
+      .replace(/^run\s+/, "")
+      .split(/\s+/)[0];
+
+    if (token === "linkedin" || token === "li") {
       window.open("https://www.linkedin.com/in/anandant/", "_blank", "noopener,noreferrer");
-    } else if (normalized === "email") {
+    } else if (token === "email" || token === "mail") {
       window.location.href = "mailto:thiyagamcitp@gmail.com";
-    } else if (normalized === "case-studies") {
+    } else if (token === "case-studies" || token === "cases") {
       const section = document.getElementById("case-studies");
       section?.scrollIntoView({ behavior: "smooth", block: "start" });
     }
@@ -205,7 +212,7 @@ function CommandPaletteFooter() {
         <h3 className="text-2xl font-semibold tracking-tight">Contact</h3>
         <p className="mt-2 text-sm text-muted">
           Command style for engineers, clear links for recruiters.
-          Try: <code className="text-accent">linkedin</code>, <code className="text-accent">email</code>, <code className="text-accent">case-studies</code>
+          Try: <code className="text-accent">linkedin</code>, <code className="text-accent">run linkedin</code>, <code className="text-accent">email</code>, <code className="text-accent">case-studies</code>
         </p>
 
         <div className="mt-4 flex items-center gap-2 rounded-xl border border-line bg-black/40 px-3 py-3">
