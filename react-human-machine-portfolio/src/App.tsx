@@ -199,7 +199,7 @@ function CommandPaletteFooter() {
     if (token === "linkedin" || token === "li") {
       window.open("https://www.linkedin.com/in/anandant/", "_blank", "noopener,noreferrer");
     } else if (token === "email" || token === "mail") {
-      window.location.href = "mailto:thiyagamcitp@gmail.com";
+      window.location.href = "mailto:thiyamcitp@gmail.com";
     } else if (token === "case-studies" || token === "cases") {
       const section = document.getElementById("case-studies");
       section?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -244,7 +244,7 @@ function CommandPaletteFooter() {
             <Linkedin size={15} /> LinkedIn
           </a>
           <a
-            href="mailto:thiyagamcitp@gmail.com"
+            href="mailto:thiyamcitp@gmail.com"
             className="focus-ring link-underline inline-flex items-center gap-2 text-muted"
           >
             <Mail size={15} /> Email
